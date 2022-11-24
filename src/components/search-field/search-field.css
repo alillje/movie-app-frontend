@@ -1,0 +1,9 @@
+.searchfieldInput {
+    height: 30px;
+    width: 385px;
+    border-radius: 100px;
+    border: none;
+    margin-left: 40px;
+    margin-top: 40px;
+    padding: 0px 20px 0px 20px;
+}

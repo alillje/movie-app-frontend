@@ -1,5 +1,6 @@
 import './topbar.css'
 import * as React from 'react'
+import SearchField from '../search-field/search-field.js'
 
 /**
  * Topbar Component.
@@ -9,7 +10,9 @@ import * as React from 'react'
 const Topbar = () => {
   return (
     <div className="topbarContainer">
+      <SearchField />
     </div>
   )
 }
+
 export default Topbar

@@ -10,6 +10,7 @@ import * as React from 'react'
 const Sidebar = () => {
   return (
     <div className="sidebarContainer">
+        <div className="sidebarHeader">Movies</div>
     </div>
   )
 }
