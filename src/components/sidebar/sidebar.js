@@ -1,6 +1,6 @@
-import './layout.css'
+import './sidebar.css'
 import * as React from 'react'
-import Sidebar from '../sidebar/sidebar.js'
+
 /**
  * Layout Component.
  * Sets the page layout with CSS grid and inserts the children into the main HTML div element.
@@ -8,14 +8,10 @@ import Sidebar from '../sidebar/sidebar.js'
  * @param {React.ReactElement} children - The React Element to insert into the component.
  * @returns {React.ReactElement} - Layout Component.
  */
-const Layout = ({ children }) => {
+const Sidebar = () => {
   return (
-    <div className="layoutContainer">
-                <div className="layoutRight">
-                <Sidebar />
-                </div>
-
+    <div className="sidebarContainer">
     </div>
   )
 }
-export default Layout
+export default Sidebar
