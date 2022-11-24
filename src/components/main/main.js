@@ -1,5 +1,6 @@
 import './main.css'
 import * as React from 'react'
+import Trending from '../trending/trending.js'
 
 /**
  * Main Component.
@@ -9,7 +10,9 @@ import * as React from 'react'
  */
 const Main = () => {
   return (
-    <div className="mainContainer"></div>
+    <div className="mainContainer">
+        <Trending />
+    </div>
   )
 }
 export default Main
