@@ -1,6 +1,6 @@
 import './trending.css'
 import * as React from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { getTitles } from '../../services/fetch-service.js'
 
 /**
@@ -10,23 +10,38 @@ import { getTitles } from '../../services/fetch-service.js'
  * @returns {React.ReactElement} - Trending Component.
  */
 const Trending = () => {
-/**
- *
- *
- * @returns {*}
- */
+  const [recievedTrending, setRecievedTrending] = useState(false)
+  const [trendingTitles, setTrendingTitles] = useState([])
+  /**
+   *
+   *
+   * @returns {*}
+   */
   useEffect(() => {
     /**
      *
      */
     const getTrending = async () => {
-      await getTitles()
+      const titles = await getTitles('3/movie/popular')
+      setTrendingTitles(titles.results)
+      setRecievedTrending(true)
+      console.log(titles.results)
     }
     getTrending()
-  }, [])
+  }, [recievedTrending])
 
   return (
-    <div className="trendingContainer"></div>
+    <div className="trendingContainer">
+        {trendingTitles.map((title) => {
+          const imageUrl = `${process.env.REACT_APP_IMAGES_URL}/original${title.backdrop_path}`
+          console.log(imageUrl)
+          return (
+                <div key={1} className="trendingTitles">
+                    <img src={imageUrl}></img>
+                </div>
+          )
+        })}
+    </div>
   )
 }
 export default Trending
