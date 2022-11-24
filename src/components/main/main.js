@@ -1,6 +1,6 @@
 import './main.css'
 import * as React from 'react'
-import Trending from '../trending/trending.js'
+import MovieBrowser from '../movie-browser/movie-browser.js'
 
 /**
  * Main Component.
@@ -11,7 +11,7 @@ import Trending from '../trending/trending.js'
 const Main = () => {
   return (
     <div className="mainContainer">
-        <div className="mainTrending"><Trending /></div>
+        <div className="mainTrending"><MovieBrowser category="Trending" endPoint="3/movie/popular" poster={false} /></div>
     </div>
   )
 }

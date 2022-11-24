@@ -7,7 +7,6 @@ export const getTitles = async (params) => {
   try {
     const response = await fetch(url)
     const json = await response.json()
-    console.log(json)
     return json
   } catch (e) {
     console.log(e)

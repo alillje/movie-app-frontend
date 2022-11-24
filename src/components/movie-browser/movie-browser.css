@@ -1,9 +1,15 @@
-.trendingContainer {
+.movieBrowserContainer {
     margin: 0px 20px 0px 20px;
 
 }
 
-.titlesContainer {
+.movieBrowserContainer h1 {
+    align-self: flex-start;
+    color: #ffffff;
+    
+}
+
+.movieBrowserTitleContainer {
     height: 100%;
     width: calc(100vw - 250px - 1vw);
     display: flex;
@@ -13,7 +19,7 @@
 
 }
 
-.trendingTitle {
+.movieBrowserTrendingTitle {
     position: relative;
 
     width: 100%;
@@ -21,7 +27,7 @@
 
 }
 
-.trendingTitle img {
+.movieBrowserTrendingTitle img {
     display: block;
     width: 680px;
     height: auto;
@@ -30,37 +36,26 @@
 
 }
 
-.trendingContainer h1 {
-    align-self: flex-start;
-    color: #ffffff;
-    
-}
-
-.trendingMovieTitleContainer {
+.movieBrowserTrendingMovieTitleContainer {
     position: absolute;
     bottom: 0;
     height: 50px;
     background: linear-gradient(90.8deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 98.77%);
     width: 100%;  
     padding: 20px;
-    
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    color: #ffffff;
     display: flex;
     flex-direction: column;
     white-space: pre-line;
     justify-content: space-around;
     align-items: middle;
+    color: #ffffff;
 
 }
 
-.trendingMovieTitleTextContainer {
 
-
-}
-
-.trendingMovieTitleContainer h3 {
+.movieBrowserTrendingMovieTitleContainer h3 {
     vertical-align: middle;
     margin: 0;
     padding: 0;
