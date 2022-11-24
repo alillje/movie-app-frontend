@@ -25,6 +25,8 @@
     width: auto;
     /* width: 100%; */
     margin: 10px;
+    transition: all .2s ease-in-out; 
+
 
 }
 
@@ -34,7 +36,6 @@
     width: auto;
     align-self: baseline;
     border-radius: 10px;
-
 }
 
 .movieBrowserTrendingMovieTitleContainer {
@@ -55,9 +56,11 @@
 
 }
 
-.movieBrowserTrendingMovieTitleContainer:hover {
-    
+.movieBrowserTrendingTitle:hover {
 
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    transform: scale(1.05);
+    z-index: 1000;
 }
 
 
