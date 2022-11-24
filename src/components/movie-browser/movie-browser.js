@@ -43,7 +43,7 @@ const MovieBrowser = ({ category, endPoint, poster }) => {
           const imageUrl = `${process.env.REACT_APP_IMAGES_URL}/original${poster ? title.poster_path : title.backdrop_path}`
           return (
                     <div key={title.id} className="movieBrowserTrendingTitle">
-                      <img src={imageUrl}></img>
+                      <img src={imageUrl} loading="lazy"></img>
                       <div className="movieBrowserTrendingMovieTitleContainer">
                          <h3>{title.original_title}</h3>
                         {title.release_date}
