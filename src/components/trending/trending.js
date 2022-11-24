@@ -36,11 +36,13 @@ const Trending = () => {
     <div className="titlesContainer">
         {trendingTitles.map((title) => {
           const imageUrl = `${process.env.REACT_APP_IMAGES_URL}/original${title.backdrop_path}`
-          console.log(imageUrl)
           return (
                     <div key={1} className="trendingTitle">
                       <img src={imageUrl}></img>
-                      <div className="trendingMovieTitleContainer"></div>
+                      <div className="trendingMovieTitleContainer">
+                         <h3>{title.original_title}</h3>
+                        {title.release_date}
+                      </div>
                     </div>
           )
         })}
