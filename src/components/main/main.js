@@ -11,7 +11,7 @@ import Trending from '../trending/trending.js'
 const Main = () => {
   return (
     <div className="mainContainer">
-        <Trending />
+        <div className="mainTrending"><Trending /></div>
     </div>
   )
 }
