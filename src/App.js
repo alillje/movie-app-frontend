@@ -1,6 +1,7 @@
 import './App.css'
 import Layout from './components/layout/layout.js'
-import Main from './components/main/main.js'
+// import Main from './components/main/main.js'
+import SearchResults from './components/search-results/search-results.js'
 
 /**
  *
@@ -8,7 +9,8 @@ import Main from './components/main/main.js'
 function App () {
   return (
     <Layout>
-      <Main />
+      {/* <Main /> */}
+      <SearchResults />
     </Layout>
   )
 }
