@@ -20,7 +20,6 @@ const MovieBrowser = ({ category, endPoint, poster }) => {
   const getMovies = async () => {
     try {
       const titles = await getTitles(endPoint)
-      console.log(titles)
       setTrendingTitles(titles.results)
       settecievedMovies(true)
     } catch (e) {
