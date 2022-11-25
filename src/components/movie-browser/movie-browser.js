@@ -2,6 +2,7 @@ import './movie-browser.css'
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { getTitles } from '../../services/fetch-service.js'
+import MovieCard from '../moive-card/movie-card.js'
 
 /**
  * MovieBrowser Component.
@@ -42,13 +43,14 @@ const MovieBrowser = ({ category, endPoint, poster }) => {
         {trendingTitles.map((title) => {
           const imageUrl = `${process.env.REACT_APP_IMAGES_URL}/original${poster ? title.poster_path : title.backdrop_path}`
           return (
-                    <div key={title.id} className="movieBrowserTrendingTitle">
-                      <img src={imageUrl} loading="lazy"></img>
-                      <div className="movieBrowserTrendingMovieTitleContainer">
-                         <h3>{title.original_title}</h3>
-                        {title.release_date}
-                      </div>
-                    </div>
+                    // <div key={title.id} className="movieBrowserTrendingTitle">
+                    //   <img src={imageUrl} loading="lazy"></img>
+                    //   <div className="movieBrowserTrendingMovieTitleContainer">
+                    //      <h3>{title.original_title}</h3>
+                    //     {title.release_date}
+                    //   </div>
+                    // </div>
+                    <MovieCard key={title.id} originalTitle={title.original_title} releaseDate={title.release_date} imageUrl={imageUrl} />
           )
         })}
     </div>
