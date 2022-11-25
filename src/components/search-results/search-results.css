@@ -1,5 +1,12 @@
 .searchResultsContainter {
+    margin: 0px 20px 0px 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.noSearchResultsContainer {
+    color: #FFFFFF;
+    width: 100%;
+    text-align: center;
 }

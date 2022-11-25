@@ -11,36 +11,53 @@ import MovieCard from '../moive-card/movie-card.js'
  * @returns {React.ReactElement} - Search Results Component.
  */
 const SearchResults = () => {
-  const isSearching = useSelector((state) => state.search.isSearching)
+  // const isSearching = useSelector((state) => state.search.isSearching)
   const searchPhrase = useSelector((state) => state.search.searchPhrase)
   const [results, setResults] = useState([])
+  window.addEventListener('scroll', (event) => infiniteScroll(event))
 
+  const [page, setPage] = useState(1)
+  // const [isLoading, setIsLoading] = useState(false)
   /**
    *
    */
   const getSearchResults = async () => {
-    const data = await searchTitles(searchPhrase)
-    const results = data.results
-    console.log(data.results)
-    setResults(results)
+    // setIsLoading(true)
+    console.log(page)
+    const searchQuery = `${searchPhrase}&page=${page}`
+    const data = await searchTitles(searchQuery)
+    const newResults = data.results
+    setResults([...results, ...newResults])
+    setPage(page + 1)
   }
+
+  /**
+   *
+   */
+  const infiniteScroll = async (event) => {
+    const bottom = document.documentElement.scrollHeight - document.documentElement.scrollTop - document.documentElement.clientHeight < 800
+    if (bottom) {
+      getSearchResults()
+    }
+  }
+
   /**
    *
    *
    * @returns {*}
    */
   useEffect(() => {
-    isSearching && getSearchResults()
+    searchPhrase && getSearchResults()
   }, [searchPhrase])
   return (
-    <div className="searchResultsContainter">
-        {results.map((title) => {
+    <div className="searchResultsContainter" onScroll={event => infiniteScroll(event)}>
+        {results.length ? results.map((title) => {
           const imageUrl = `${process.env.REACT_APP_IMAGES_URL}/original${title.poster_path}`
           return (
-
-                    <MovieCard key={title.id} originalTitle={title.original_title} releaseDate={title.release_date} imageUrl={imageUrl} />
+            <MovieCard key={title.id} originalTitle={title.original_title} releaseDate={title.release_date} imageUrl={imageUrl} />
           )
-        })}    </div>
+        }) : <h2 className="noSearchResultsContainer">No Results</h2>}
+        </div>
   )
 }
 export default SearchResults
