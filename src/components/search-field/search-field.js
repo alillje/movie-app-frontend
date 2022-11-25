@@ -2,7 +2,7 @@ import './search-field.css'
 import * as React from 'react'
 import { useDispatch } from 'react-redux'
 import { useState, useEffect } from 'react'
-import { setSearch } from '../../redux/reducers/search'
+import { setSearch, setCurrentPage } from '../../redux/reducers/search'
 
 /**
  * SearchField Component.
@@ -23,6 +23,11 @@ const SearchField = () => {
         searchPhrase: currentSearch
       })
     )
+    dispatch(
+      setCurrentPage({
+        currentPage: 1
+      })
+    )
   }
 
   /**
@@ -34,6 +39,11 @@ const SearchField = () => {
       setSearch({
         isSearching: false,
         searchPhrase: null
+      })
+    )
+    dispatch(
+      setCurrentPage({
+        currentPage: 1
       })
     )
   }
