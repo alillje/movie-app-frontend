@@ -9,7 +9,7 @@ import DiscoverResults from '../../components/discover-results/discover-results.
 const Discover = () => {
   return (
     <div className="discoverContainer">
-        <DiscoverResults />
+        <DiscoverResults title="Discover" />
     </div>
   )
 }

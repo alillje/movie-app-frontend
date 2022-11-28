@@ -43,3 +43,20 @@ export const getCategories = async () => {
     console.log(e)
   }
 }
+
+/**
+ *
+ * @param {*} categoryId
+ * @returns
+ */
+export const getSingleCategory = async (categoryId) => {
+  const url = `${process.env.REACT_APP_API_URL}3/list/${categoryId}?api_key=${process.env.REACT_APP_API_KEY}`
+  try {
+    const response = await fetch(url)
+    const json = await response.json()
+    console.log(json)
+    return json
+  } catch (e) {
+    console.log(e)
+  }
+}
