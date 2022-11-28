@@ -79,3 +79,22 @@ export const getSingleMovie = async (movieId) => {
     console.log(e)
   }
 }
+
+/**
+ *
+ * @param {*} movieId
+ * @returns
+ */
+export const getMovieTrailer = async (movieId) => {
+  const url = `${process.env.REACT_APP_API_URL}3/movie/${movieId}/videos?api_key=${process.env.REACT_APP_API_KEY}`
+  try {
+    const response = await fetch(url)
+    const json = await response.json()
+    const videoId = json.results[0].key
+    if (response.ok) {
+      return videoId
+    }
+  } catch (e) {
+    console.log(e)
+  }
+}

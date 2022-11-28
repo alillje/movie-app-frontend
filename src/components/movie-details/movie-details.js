@@ -1,6 +1,9 @@
 import './movie-details.css'
 import * as React from 'react'
-// import { useState, useEffect } from 'react'
+import { getMovieTrailer } from '../../services/fetch-service'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+
 // import { getTitles } from '../../services/fetch-service.js'
 
 /**
@@ -9,10 +12,45 @@ import * as React from 'react'
  * @param {React.ReactElement} children - The React Element to insert into the component.
  * @returns {React.ReactElement} - MovieBrowser Component.
  */
-const MovieDetails = () => {
+const MovieDetails = ({ movieData }) => {
+  const params = useParams()
+  const imageUrl = `${process.env.REACT_APP_IMAGES_URL}/original${movieData.poster_path}`
+  const [videoUrl, setVideoUrl] = useState('')
+
+  /**
+   *
+   */
+  const getVideoUrl = async () => {
+    const videoPath = await getMovieTrailer(params.id)
+    setVideoUrl(videoPath)
+  }
+
+  useEffect(() => {
+    getVideoUrl()
+  }, [])
   return (
     <div className="movieDetailsContainer">
-        TESTEST
+      <div className="movieDetailsImageWrapper">
+      <img className src={imageUrl}></img>
+      </div>
+      <div className="movieDetailsOverviewContainer">
+      <h1>{movieData.original_title}</h1>
+      <h3>{movieData.tagline}</h3>
+
+        {movieData.overview}
+
+        </div>
+        <div className="movieDetailsInfoContainer">
+          <ul>
+        <li><b>Release Date: </b>{movieData.release_date}</li>
+        <li><b>Rating: </b>{movieData.vote_average}</li>
+        <li><b>Votes: </b>{movieData.vote_count}</li>
+</ul>
+      </div>
+      <div className="movieDetailsTrailerContainer">
+        {videoUrl && <iframe id="player" type="text/html" width="640" height="390"
+  src={`http://www.youtube.com/embed/${videoUrl}?enablejsapi=1`}></iframe>}
+      </div>
     </div>
   )
 }
