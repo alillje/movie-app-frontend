@@ -11,13 +11,13 @@ import { useState } from 'react'
 const MovieCard = ({ imageUrl, originalTitle, releaseDate, poster }) => {
   const [loading, setLoading] = useState(true)
   return (
-    <div className="movieCardContainer" >
-    <div style={{ width: poster ? '255px' : '680px', display: !loading ? 'none' : 'block', marginLeft: poster ? '127px' : '340px' }} className="movieCardLoaderWrapper">
-      <div className="movieCardLoader"></div>
-    </div>
+    <div onClick={console.log('test')} className="movieCardContainer" >
+    {/* <div style={{ width: poster ? '255px' : '680px', display: loading ? 'block' : 'none' }} className="movieCardLoaderWrapper"> */}
+      <div className="movieCardLoader" style={{ width: '40px', margin: poster ? ' 0px 108px 0px 107px' : '0px 320px 0px 320px', display: loading ? 'block' : 'none' }}></div>
+    {/* </div> */}
 
-    <img onLoad={() => setLoading(false)} style={{ width: poster ? '255px' : '680px', display: !loading ? 'block' : 'none' }} src={imageUrl} />
-    <div className="movieCardTitle">
+    <img onLoad={() => setLoading(false)} style={{ width: poster ? '255px' : '680px', display: loading ? 'none' : 'block' }} src={imageUrl} />
+    <div className="movieCardTitle" style={{ display: !loading ? 'none' : 'block', width: poster ? '255px' : '680px' }}>
        <h3>{originalTitle}</h3>
       {releaseDate}
     </div>

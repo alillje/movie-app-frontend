@@ -15,40 +15,39 @@ import MovieCard from '../moive-card/movie-card.js'
 const DiscoverResults = ({ title }) => {
   const [categories, setCategories] = useState([])
   const [results, setResults] = useState([])
-
-  // const [isLoading, setIsLoading] = useState(false)
-  // const [prevPage, setPrevPage] = useState(0)
+  const [currentCategory, setCurrentCategory] = useState(null)
+  const [totalPages, setTotalPages] = useState(0)
+  const [isLoading, setIsLoading] = useState(false)
+  const [prevPage, setPrevPage] = useState(0)
   /**
    *
    * @param event
    */
   const getCategoryResults = async (event) => {
+    setIsLoading(true)
     setButtonActive(event.target.id)
-    // setPrevPage(0)
-    const data = await getSingleCategory(event.target.value)
-    const newResults = data.items
+    setCurrentCategory(event.target.id)
+    setPrevPage(0)
+    const data = await getSingleCategory(`{${event.target.value}&page=${prevPage + 1}`)
+    const newResults = data.results
     setResults(newResults)
-    // setPrevPage(data.page)
+    setPrevPage(data.page)
+    setTotalPages(data.total_pages)
+    setIsLoading(false)
   }
-  // /**
-  //  *
-  //  */
-  // const loadMore = async () => {
-  //   console.log('test')
-  //   setIsLoading(true)
-  //   document.documentElement.scrollTop = document.documentElement.scrollHeight
-
-  //   const searchQuery = `${searchPhrase}&page=${prevPage + 1}`
-  //   const data = await searchTitles(searchQuery)
-  //   if (prevPage === data.page - 1) {
-  //     setPrevPage(data.page)
-  //     const newResults = data.results
-  //     setResults([...results, ...newResults])
-  //   } else {
-  //     setPrevPage(data.page - 1)
-  //   }
-  //   setIsLoading(false)
-  // }
+  /**
+   *
+   */
+  const loadMore = async () => {
+    const data = await getSingleCategory(`{${currentCategory}&page=${prevPage + 1}`)
+    if (prevPage === data.page - 1) {
+      setPrevPage(data.page)
+      const newResults = data.results
+      setResults([...results, ...newResults])
+    } else {
+      setPrevPage(data.page - 1)
+    }
+  }
 
   /**
    *
@@ -78,8 +77,9 @@ const DiscoverResults = ({ title }) => {
    * @returns {*}
    */
   useEffect(() => {
+    console.log(isLoading)
     getAllCategories()
-  }, [])
+  }, [results])
 
   return (
     <div className="discoverResultsContainer">
@@ -99,6 +99,8 @@ const DiscoverResults = ({ title }) => {
   )
 }) : <div className="discoverNoCategoryMessage"><h1>Pick a category to start browsing</h1></div>}
 </div>
+{prevPage + 1 < totalPages && <div className="discoverLoadMoreButtonWrapper"><div className="discoverLoadMoreButton" onClick={loadMore}><div className="discoverLoadMoreText"><h3>Load More</h3></div></div></div>
+}
         </div>
   )
 }

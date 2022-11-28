@@ -6,6 +6,7 @@
     flex-wrap: wrap;
     width: calc(100vw - 250px);
     margin-left: 40px;
+
 }
 
 
@@ -47,9 +48,6 @@
 
 }
 
-.discoverResultsTitleContainer {
-
-}
 
 .discoverResultsContainer h1 {
     align-self: flex-start;
@@ -74,4 +72,41 @@
     padding: 0;
     color: #b5b5b585;
 
+}
+
+.discoverLoadMoreButtonWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.discoverLoadMoreButton {
+    width: 200px;
+    height: 60px;
+    background-color: inherit;
+    border: 1px solid #565656;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: middle;
+    cursor: pointer;
+    border-radius: 10px;
+    color:#FFFFFF;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: all .4s ease-in-out; 
+    align-self: middle;
+
+}
+
+.discoverLoadMoreButton:hover {
+    background-color: #89898929;
+}
+
+.discoverLoadMoreText h2 {
+    align-self: center;
+    margin: 0px;
+    padding: 0px;
 }

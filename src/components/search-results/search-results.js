@@ -92,7 +92,7 @@ const SearchResults = () => {
         }) : <h2 className="noSearchResultsContainer">No Results</h2>}
         {isLoading && <div className="serachLoadingDiv">LOADING....</div>}
         <div className="searchLoadMoreButtonWrapper">
-        <div className="searchLoadMoreButton" onClick={loadMore}><div className="serachLoadMoreText"><h3>Load More</h3></div></div>
+        <div className="searchLoadMoreButton" onClick={loadMore}><div className="searchLoadMoreText"><h3>Load More</h3></div></div>
         </div>
         </div>
   )

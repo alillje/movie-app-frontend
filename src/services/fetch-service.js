@@ -50,7 +50,7 @@ export const getCategories = async () => {
  * @returns
  */
 export const getSingleCategory = async (categoryId) => {
-  const url = `${process.env.REACT_APP_API_URL}3/list/${categoryId}?api_key=${process.env.REACT_APP_API_KEY}`
+  const url = `${process.env.REACT_APP_API_URL}3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&genre=${categoryId}`
   try {
     const response = await fetch(url)
     const json = await response.json()
