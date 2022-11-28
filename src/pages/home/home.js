@@ -1,7 +1,7 @@
 import './home.css'
 import * as React from 'react'
 import MovieBrowser from '../../components/movie-browser/movie-browser.js'
-
+import { useEffect } from 'react'
 /**
  * Main Component.
  *
@@ -9,6 +9,9 @@ import MovieBrowser from '../../components/movie-browser/movie-browser.js'
  * @returns {React.ReactElement} - Main Component.
  */
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
   return (
     <div className="mainContainer">
         <div className="mainTrending">

@@ -3,7 +3,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: min-content 1fr;
-    grid-template-rows: 200px repeat(5, 1fr) auto;
+    grid-template-rows: 200px min-content 200px 100px 100px;
     grid-column-gap: 20px;
     grid-row-gap: 0px;
     padding-left: 40px;
@@ -59,6 +59,17 @@
 }
 
 .movieDetailsTrailerContainer {
-    grid-area: 4 / 1 / 7 / 4;
+    grid-area: 6 / 1 / 7 / 4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.movieDetailsTrailerTitle {
+    text-align: center;
+    margin-top: 70px;
+    grid-area: 5 / 1 / 7 / 4;
 
 }
