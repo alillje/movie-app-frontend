@@ -1,5 +1,6 @@
 import './sidebar.css'
 import * as React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 /**
  * Sidebar Component.
@@ -8,9 +9,14 @@ import * as React from 'react'
  * @returns {React.ReactElement} - Sidebar Component.
  */
 const Sidebar = () => {
+  const navigate = useNavigate()
+
   return (
     <div className="sidebarContainer">
         <div className="sidebarHeader">Movies</div>
+        <div className="sideBarButton" onClick={() => navigate('/')}>Home</div>
+        <div className="sideBarButton" onClick={() => navigate('/discover')}>Discover</div>
+
     </div>
   )
 }

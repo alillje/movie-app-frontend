@@ -1,6 +1,6 @@
-import './main.css'
+import './home.css'
 import * as React from 'react'
-import MovieBrowser from '../movie-browser/movie-browser.js'
+import MovieBrowser from '../../components/movie-browser/movie-browser.js'
 
 /**
  * Main Component.
@@ -8,7 +8,7 @@ import MovieBrowser from '../movie-browser/movie-browser.js'
  * @param {React.ReactElement} children - The React Element to insert into the component.
  * @returns {React.ReactElement} - Main Component.
  */
-const Main = () => {
+const Home = () => {
   return (
     <div className="mainContainer">
         <div className="mainTrending">
@@ -20,4 +20,4 @@ const Main = () => {
     </div>
   )
 }
-export default Main
+export default Home
