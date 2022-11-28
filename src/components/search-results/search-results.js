@@ -46,9 +46,6 @@ const SearchResults = () => {
       setPrevPage(data.page)
       const newResults = data.results
       setResults([...results, ...newResults])
-      console.log(results)
-      console.log('page: ' + data.page)
-      console.log('No of res: ' + results.length)
     } else {
       setPrevPage(data.page - 1)
     }

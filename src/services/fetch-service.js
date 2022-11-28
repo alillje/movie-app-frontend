@@ -27,3 +27,19 @@ export const searchTitles = async (searchPhrase) => {
     console.log(e)
   }
 }
+
+/**
+ *
+ * @returns {array} - categories
+ */
+export const getCategories = async () => {
+  const url = `${process.env.REACT_APP_API_URL}3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`
+  try {
+    const response = await fetch(url)
+    const json = await response.json()
+    console.log(json)
+    return json
+  } catch (e) {
+    console.log(e)
+  }
+}

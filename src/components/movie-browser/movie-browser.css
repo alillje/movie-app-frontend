@@ -1,71 +1,66 @@
 .movieBrowserContainer {
-    margin: 0px 20px 0px 20px;
-
+  margin: 0px 20px 0px 20px;
 }
 
 .movieBrowserContainer h1 {
-    align-self: flex-start;
-    color: #ffffff;
-    
+  align-self: flex-start;
+  color: #ffffff;
 }
 
 .movieBrowserTitleContainer {
-    height: 100%;
-    width: calc(100vw - 250px - 1vw);
-    display: flex;
-    flex-direction: row;
-    /* margin: 0px 20px 0px 20px; */
-    overflow-x: scroll;
-
+  height: 100%;
+  width: calc(100vw - 250px - 1vw);
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
 }
 
 .movieBrowserTrendingTitle {
-    position: relative;
-    height: 400px;
-    width: auto;
-    /* width: 100%; */
-    margin: 10px;
-    transition: all .2s ease-in-out; 
-
-
+  position: relative;
+  height: 400px;
+  width: auto;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
 }
 
 .movieBrowserTrendingTitle img {
-    display: block;
-    height: 400px;
-    width: auto;
-    align-self: baseline;
-    border-radius: 10px;
+  display: block;
+  height: 400px;
+  width: auto;
+  align-self: baseline;
+  border-radius: 10px;
 }
 
 .movieBrowserTrendingMovieTitleContainer {
-    position: absolute;
-    bottom: 0;
-    height: 50px;
-    background: linear-gradient(90.8deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 98.77%);
-    width: 100%;  
-    padding: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    white-space: pre-line;
-    justify-content: space-around;
-    align-items: middle;
-    color: #ffffff;
-
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  background: linear-gradient(
+    90.8deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 98.77%
+  );
+  width: 100%;
+  padding: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  white-space: pre-line;
+  justify-content: space-around;
+  align-items: middle;
+  color: #ffffff;
 }
 
 .movieBrowserTrendingTitle:hover {
-
-    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-    transform: scale(1.05);
-    z-index: 1000;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  transform: scale(1.05);
+  z-index: 1000;
 }
 
-
 .movieBrowserTrendingMovieTitleContainer h3 {
-    vertical-align: middle;
-    margin: 0;
-    padding: 0;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
 }

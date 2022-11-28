@@ -1,8 +1,8 @@
-import './search-results.css'
+import './discover-results.css'
 import * as React from 'react'
 import { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
-import { searchTitles } from '../../services/fetch-service.js'
+// import { useSelector } from 'react-redux'
+import { getCategories } from '../../services/fetch-service.js'
 // import MovieCard from '../moive-card/movie-card.js'
 
 /**
@@ -11,42 +11,49 @@ import { searchTitles } from '../../services/fetch-service.js'
  * @returns {React.ReactElement} - Search Results Component.
  */
 const DiscoverResults = () => {
-  // const isSearching = useSelector((state) => state.search.isSearching)
-  const searchPhrase = useSelector((state) => state.search.searchPhrase)
-  const [results, setResults] = useState([])
+  const [categories, setCategories] = useState([])
+  // const [results, setResults] = useState([])
 
-  const [isLoading, setIsLoading] = useState(false)
-  const [prevPage, setPrevPage] = useState(0)
+  // const [isLoading, setIsLoading] = useState(false)
+  // const [prevPage, setPrevPage] = useState(0)
+  // /**
+  //  *
+  //  */
+  // const getDiscoverResults = async () => {
+  //   setPrevPage(0)
+  //   setResults([])
+  //   const searchQuery = `${category}&page=${prevPage + 1}`
+  //   const data = await searchTitles(searchQuery)
+  //   const newResults = data.results
+  //   setResults(newResults)
+  //   setPrevPage(data.page)
+  // }
+  // /**
+  //  *
+  //  */
+  // const loadMore = async () => {
+  //   console.log('test')
+  //   setIsLoading(true)
+  //   document.documentElement.scrollTop = document.documentElement.scrollHeight
+
+  //   const searchQuery = `${searchPhrase}&page=${prevPage + 1}`
+  //   const data = await searchTitles(searchQuery)
+  //   if (prevPage === data.page - 1) {
+  //     setPrevPage(data.page)
+  //     const newResults = data.results
+  //     setResults([...results, ...newResults])
+  //   } else {
+  //     setPrevPage(data.page - 1)
+  //   }
+  //   setIsLoading(false)
+  // }
+
   /**
    *
    */
-  const getDiscoverResults = async () => {
-    setPrevPage(0)
-    setResults([])
-    const searchQuery = `${searchPhrase}&page=${prevPage + 1}`
-    const data = await searchTitles(searchQuery)
-    const newResults = data.results
-    setResults(newResults)
-    setPrevPage(data.page)
-  }
-  /**
-   *
-   */
-  const loadMore = async () => {
-    console.log('test')
-    setIsLoading(true)
-    document.documentElement.scrollTop = document.documentElement.scrollHeight
-
-    const searchQuery = `${searchPhrase}&page=${prevPage + 1}`
-    const data = await searchTitles(searchQuery)
-    if (prevPage === data.page - 1) {
-      setPrevPage(data.page)
-      const newResults = data.results
-      setResults([...results, ...newResults])
-    } else {
-      setPrevPage(data.page - 1)
-    }
-    setIsLoading(false)
+  const getAllCategories = async () => {
+    const cats = await getCategories()
+    setCategories(cats.genres)
   }
 
   /**
@@ -55,11 +62,18 @@ const DiscoverResults = () => {
    * @returns {*}
    */
   useEffect(() => {
-    getDiscoverResults()
-  }, [category])
+    getAllCategories()
+  }, [])
+
   return (
     <div className="discoverResultsContainer">
-
+<div className="discoverButtons">
+{categories.length && categories.map((category) => {
+  return (
+    <div key={category.id} value={category.id} className="discoverCategoryButton">{category.name}</div>
+  )
+})}
+</div>
         </div>
   )
 }
