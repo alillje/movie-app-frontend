@@ -2,9 +2,8 @@ import './App.css'
 import Layout from './components/layout/layout.js'
 import Home from './pages/home/home.js'
 import Discover from './pages/discover/discover.js'
+import Movie from './pages/movie/movie.js'
 
-// import SearchResults from './components/search-results/search-results.js'
-// import { useSelector } from 'react-redux'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 
 /**
@@ -27,6 +26,11 @@ function App () {
         exact
         path='/discover'
         element={<Layout><Discover /></Layout>}
+      />
+            <Route
+        exact
+        path='/movie/:id'
+        element={<Layout><Movie /></Layout>}
       />
       </Routes>
     </HashRouter>

@@ -85,9 +85,8 @@ const SearchResults = () => {
     <div className="searchResultsContainter">
         {results.length ? results.map((title) => {
           const imageUrl = `${process.env.REACT_APP_IMAGES_URL}/original${title.poster_path}`
-          // console.log(title.id, title.original_title)
           return (
-            <MovieCard key={title.id} originalTitle={title.original_title} releaseDate={title.release_date} imageUrl={imageUrl} poster={true} />
+            <MovieCard key={title.id} movieId={title.id} originalTitle={title.original_title} releaseDate={title.release_date} imageUrl={imageUrl} poster={true} />
           )
         }) : <h2 className="noSearchResultsContainer">No Results</h2>}
         {isLoading && <div className="serachLoadingDiv">LOADING....</div>}

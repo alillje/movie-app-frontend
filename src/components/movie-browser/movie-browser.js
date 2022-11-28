@@ -44,7 +44,7 @@ const MovieBrowser = ({ category, endPoint, poster }) => {
     <div className="movieBrowserTitleContainer">
         {trendingTitles.map((title) => {
           const imageUrl = `${process.env.REACT_APP_IMAGES_URL}/original${poster ? title.poster_path : title.backdrop_path}`
-          return (<MovieCard key={title.id} originalTitle={title.original_title} releaseDate={title.release_date} imageUrl={imageUrl} poster={poster} />)
+          return (<MovieCard key={title.id} movieId={title.id} originalTitle={title.original_title} releaseDate={title.release_date} imageUrl={imageUrl} poster={poster} />)
         })}
     </div>
     </div>

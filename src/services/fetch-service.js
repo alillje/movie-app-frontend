@@ -30,7 +30,7 @@ export const searchTitles = async (searchPhrase) => {
 
 /**
  *
- * @returns {array} - categories
+ * @returns {Array} - categories
  */
 export const getCategories = async () => {
   const url = `${process.env.REACT_APP_API_URL}3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}`
@@ -56,6 +56,25 @@ export const getSingleCategory = async (categoryId) => {
     const json = await response.json()
     console.log(json)
     return json
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+/**
+ *
+ * @param {*} movieId
+ * @returns
+ */
+export const getSingleMovie = async (movieId) => {
+  const url = `${process.env.REACT_APP_API_URL}3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}`
+  try {
+    const response = await fetch(url)
+    const json = await response.json()
+    console.log(json)
+    if (response.ok) {
+      return json
+    }
   } catch (e) {
     console.log(e)
   }

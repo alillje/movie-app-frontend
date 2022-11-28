@@ -95,7 +95,7 @@ const DiscoverResults = ({ title }) => {
 {results.length ? results.map((title) => {
   const imageUrl = `${process.env.REACT_APP_IMAGES_URL}/original${title.poster_path}`
   return (
-            <MovieCard key={title.id} originalTitle={title.original_title} releaseDate={title.release_date} imageUrl={imageUrl} poster={true} />
+            <MovieCard key={title.id} movieId={title.id} originalTitle={title.original_title} releaseDate={title.release_date} imageUrl={imageUrl} poster={true} />
   )
 }) : <div className="discoverNoCategoryMessage"><h1>Pick a category to start browsing</h1></div>}
 </div>
