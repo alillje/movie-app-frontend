@@ -36,6 +36,7 @@ const SearchResults = () => {
    *
    */
   const loadMore = async () => {
+    console.log('test')
     setIsLoading(true)
     document.documentElement.scrollTop = document.documentElement.scrollHeight
 
@@ -93,7 +94,9 @@ const SearchResults = () => {
           )
         }) : <h2 className="noSearchResultsContainer">No Results</h2>}
         {isLoading && <div className="serachLoadingDiv">LOADING....</div>}
+        <div className="searchLoadMoreButtonWrapper">
         <div className="searchLoadMoreButton" onClick={loadMore}><div className="serachLoadMoreText"><h3>Load More</h3></div></div>
+        </div>
         </div>
   )
 }

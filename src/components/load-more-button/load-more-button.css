@@ -1,33 +1,14 @@
-.searchResultsContainter {
-    margin: 0px 20px 0px 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.noSearchResultsContainer {
-    color: #FFFFFF;
-    width: 100%;
-    text-align: center;
-}
-
-.serachLoadingDiv {
-    width: 100%;
-    height: 2000px;
-}
-
-.searchLoadMoreButtonWrapper {
+/* .loadMoreButtonContainer {
     width: 100%;
     display: flex;
     justify-content: center;
-}
+} */
 
-.searchLoadMoreButton {
+.loadMoreButtonContainer {
     width: 200px;
     height: 60px;
     background-color: inherit;
     border: 1px solid #565656;
-
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -40,14 +21,14 @@
     margin-top: 20px;
     margin-bottom: 20px;
     transition: all .4s ease-in-out; 
-
+    align-self: center;;
 }
 
-.searchLoadMoreButton:hover {
-    background-color: #89898929;
+.loadMoreButtonContainer:hover {
+    background-color: #727171b7;
 }
 
-.serachLoadMoreText h2 {
+.loadMoreButtonText h2 {
     align-self: center;
     margin: 0px;
     padding: 0px;
