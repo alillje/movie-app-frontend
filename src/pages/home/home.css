@@ -1,4 +1,4 @@
-.mainContainer {
+.homeContainer {
     background-color: inherit;
     width: 100%;
     height: 100%;
@@ -8,10 +8,15 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     margin-left: 30px;
-    
-
 }
 
-.mainTrending {
+.homeTrending {
     grid-area: 1 / 1 / 2 / 2;
 }
+
+@media screen and (max-width: 900px) {
+    .homeContainer {
+        margin-left: 0px;
+    }
+    
+}  

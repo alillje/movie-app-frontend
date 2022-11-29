@@ -1,14 +1,17 @@
 .searchResultsContainter {
     margin: 0px 20px 0px 20px;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    flex-direction: row;
+
 }
 
 .noSearchResultsContainer {
     color: #FFFFFF;
     width: 100%;
     text-align: center;
+    justify-content: center;
+
 }
 
 .serachLoadingDiv {
@@ -50,4 +53,13 @@
     align-self: center;
     margin: 0px;
     padding: 0px;
+}
+
+@media screen and (max-width: 900px) {
+    .noSearchResultsContainer {
+        margin: 0;
+        padding: 0;
+        justify-content: space-evenly;
+    
+    }
 }

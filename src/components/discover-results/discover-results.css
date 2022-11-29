@@ -19,7 +19,6 @@
 
 .discoverButtons {
     display: inline-flex;
-
     width: min-content;
     width: calc(100%);
     height: 50px;
@@ -64,13 +63,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     height: auto;
+    justify-content: center;
+
   }
 
 
 .discoverNoCategoryMessage {
     width: calc(100vw - 250px);
     text-align: center;
-    margin-top: 300px;
+    margin-top: 150px;
     place-items: center;
     align-self: center;
 }
@@ -147,4 +148,51 @@
   @keyframes rotate {
     0% {  transform: rotate(0)}
     100% { transform: rotate(360deg)}
+  }
+
+  @media screen and (max-width: 900px) {
+    .discoverResultsContainer {
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 20px;
+        margin-right: 20px;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .discoverResults {
+        justify-content: center;
+    }
+
+    .discoverButtonsWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: min-content;
+        overflow: visible;
+        margin-bottom: 270px;
+
+    }
+
+    .discoverButtons {
+        display: flex;
+        flex-wrap: wrap;
+        width: min-content;
+        gap: 10px;
+        width: 100vw;
+        overflow: visible;
+
+    }
+
+    .discoverCategoryButton {
+        padding: 20px;
+    }
+
+
+    .discoverNoCategoryMessage {
+        margin-top: 80px;
+    }
   }

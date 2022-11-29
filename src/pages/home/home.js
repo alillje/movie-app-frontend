@@ -13,8 +13,8 @@ const Home = () => {
     window.scrollTo(0, 0)
   })
   return (
-    <div className="mainContainer">
-        <div className="mainTrending">
+    <div className="homeContainer">
+        <div className="homeTrending">
           <MovieBrowser category="Trending" endPoint="3/movie/popular" poster={false} />
           <MovieBrowser category="Now Playing" endPoint="3/movie/now_playing" poster={true} />
           <MovieBrowser category="Top Rated" endPoint="3/movie/top_rated" poster={true} />

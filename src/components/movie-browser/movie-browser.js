@@ -51,10 +51,3 @@ const MovieBrowser = ({ category, endPoint, poster }) => {
   )
 }
 export default MovieBrowser
-// <div key={title.id} className="movieBrowserTrendingTitle">
-//   <img src={imageUrl} loading="lazy"></img>
-//   <div className="movieBrowserTrendingMovieTitleContainer">
-//      <h3>{title.original_title}</h3>
-//     {title.release_date}
-//   </div>
-// </div>

@@ -7,3 +7,13 @@
     margin-top: 40px;
     padding: 0px 20px 0px 20px;
 }
+
+@media screen and (max-width: 1150px) {
+    .searchfieldInput {
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 90%;
+        bottom: 0;
+    }
+    
+}

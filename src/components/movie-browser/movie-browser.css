@@ -50,6 +50,7 @@
   justify-content: space-around;
   align-items: middle;
   color: #ffffff;
+
 }
 
 .movieBrowserTrendingTitle:hover {
@@ -63,4 +64,25 @@
   vertical-align: middle;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .movieBrowserContainer {
+    margin: 0px 5px 0px 5px;
+
+  }
+  .movieBrowserTitleContainer {
+    width: 100vw;
+    height: 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+
+  .movieBrowserContainer h1 {
+    margin-left: 20px;
+  }
+
 }

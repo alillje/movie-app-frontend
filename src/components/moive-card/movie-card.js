@@ -35,12 +35,12 @@ const MovieCard = ({ imageUrl, originalTitle, releaseDate, poster, movieId }) =>
     <div className="movieCardContainer" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Link to={`/movie/${movieId}`}>
       <div className="movieCardLoader" style={{ width: '40px', margin: poster ? ' 0px 108px 0px 107px' : '0px 320px 0px 320px', display: loading ? 'block' : 'none' }}></div>
+      {poster ? <img className="movieCardPosterImg" onLoad={() => setLoading(false)} style={{ display: loading ? 'none' : 'block' }} src={imageUrl} /> : <img className="movieCardImg" onLoad={() => setLoading(false)} style={{ display: loading ? 'none' : 'block' }} src={imageUrl} />}
 
-    <img onLoad={() => setLoading(false)} style={{ width: poster ? '255px' : '680px', display: loading ? 'none' : 'block' }} src={imageUrl} />
-    <div className="movieCardTitleBackdrop" style={{ display: loading || poster ? 'none' : 'block', width: poster ? '255px' : '680px' }}>
+    {!poster && <div className="movieCardTitleBackdrop" style={{ display: loading || poster ? 'none' : 'block', width: poster ? '255px' : '680px' }}>
        <h3>{originalTitle}</h3>
       {releaseDate}
-    </div>
+    </div>}
 
    {isHover && poster && !loading && <div className="movieCardTitlePoster" style={{ width: poster ? '255px' : '680px' }}>
        <h3>{originalTitle}</h3>

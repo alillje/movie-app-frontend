@@ -9,7 +9,7 @@
 
 }
 
-.movieCardContainer img {
+/* .movieCardContainer img {
     display: block;
     height: 400px;
     width: auto;
@@ -17,10 +17,27 @@
     align-self: baseline;
     border-radius: 10px;
     z-index: 2000;
+} */
+
+.movieCardPosterImg {
+  display: block;
+  height: 100%;
+  width: auto;
+  width: 255px;
+  align-self: baseline;
+  border-radius: 10px;
+  z-index: 2000;
+}
+
+.movieCardImg {
+  display: block;
+  width: 680px;
+  align-self: baseline;
+  border-radius: 10px;
+  z-index: 2000;
 }
 
 .movieCardContainer:hover {
-
     box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
     transform: scale(1.05);
 }
@@ -41,7 +58,6 @@
     justify-content: space-around;
     align-items: middle;
     color: #ffffff;
-
 }
 
 .movieCardTitleBackdrop h3 {
@@ -89,3 +105,38 @@
       transform: rotate(360deg);
     }
   } 
+
+  @media screen and (max-width: 900px) {
+
+    .movieCardContainer {
+      position: relative;
+      height: min-content;
+      width: auto;
+      margin: 5%;
+      transition: all .2s ease-in-out; 
+      display: flex;
+      align-items: center;
+    }
+
+  .movieCardPosterImg {
+    display: block;
+    height: 100%;
+    width: auto;
+    width: 35vw;
+    align-self: baseline;
+    border-radius: 10px;
+    z-index: 2000;
+  }
+  
+  .movieCardImg {
+    display: block;
+    width: 90vw;
+    align-self: baseline;
+    border-radius: 10px;
+    z-index: 2000;
+  }
+
+  .movieCardTitleBackdrop {
+    max-width: 100%;  
+}
+  }
