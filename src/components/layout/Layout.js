@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
                         <div className="layoutTop">
                 <Topbar />
                 </div>
-                <div className="layoutRight">
+                <div className="layoutLeft">
                 <Sidebar />
                 </div>
                 <div className="layoutMain">

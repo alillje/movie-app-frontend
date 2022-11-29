@@ -19,9 +19,29 @@
   color: #ffffff;
   text-align: center;
   margin-top: 39px;
+  cursor: pointer;
+}
+
+.sidebarButtons {
+  grid-row: 4 / 6;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  align-self: center;
 }
 
 .sideBarButton {
-  color: #ffffff;
+  width: 100%;
+  color: #838383;
   cursor: pointer;
+  padding: 20px 0px 20px 0px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  transition: all .2s ease-in-out; 
+
+}
+
+.sideBarButton:hover {
+  color: #ffffff;
 }

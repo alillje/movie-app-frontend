@@ -18,13 +18,13 @@ const MovieCard = ({ imageUrl, originalTitle, releaseDate, poster, movieId }) =>
    * @param {*} event
    */
   const handleMouseEnter = (event) => {
-    console.log('test')
     setIsHover(true)
   }
 
   /**
    *
    * @param {*} events
+   * @param event
    */
   const handleMouseLeave = (event) => {
     setIsHover(false)

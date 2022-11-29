@@ -11,14 +11,10 @@ import MovieCard from '../moive-card/movie-card.js'
  * @returns {React.ReactElement} - Search Results Component.
  */
 const SearchResults = () => {
-  // const isSearching = useSelector((state) => state.search.isSearching)
   const searchPhrase = useSelector((state) => state.search.searchPhrase)
   const [currentSearchPhrase, setCurrentSearchPhrase] = useState('')
-  // const currentPage = useSelector((state) => state.search.currentPage)
   const [results, setResults] = useState([])
   const [totalPages, setTotalPages] = useState(0)
-
-  // window.addEventListener('scroll', (event) => infiniteScroll(event))
   const [isLoading, setIsLoading] = useState(false)
   const [prevPage, setPrevPage] = useState(0)
   /**
@@ -38,10 +34,7 @@ const SearchResults = () => {
    *
    */
   const loadMore = async () => {
-    console.log('test')
     setIsLoading(true)
-    document.documentElement.scrollTop = document.documentElement.scrollHeight
-
     const searchQuery = `${searchPhrase}&page=${prevPage + 1}`
     const data = await searchTitles(searchQuery)
     if (prevPage === data.page - 1) {
@@ -53,24 +46,6 @@ const SearchResults = () => {
     }
     setIsLoading(false)
   }
-
-  /**
-   *
-   * @param event
-   */
-  // const infiniteScroll = async (event) => {
-  //   const bottom = document.documentElement.scrollHeight - document.documentElement.scrollTop - document.documentElement.clientHeight < 50
-
-  //   if (bottom) {
-  //     event.preventDefault()
-  //     loadMore()
-  //     // document.documentElement.scrollTop = document.documentElement.scrollHeight
-
-  //     // setTimeout(() => {
-  //     //   setScrollabe(false)
-  //     // }, 10000)
-  //   }
-  // }
 
   /**
    *

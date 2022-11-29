@@ -14,8 +14,11 @@
     grid-area: 1 / 2 / 2 / 2;;
   }
 
-  .layoutRight {
+  .layoutLeft {
     grid-area: 1 / 1 / 8 / 2;;
+    position:fixed;
+    height: calc(100vh);
+    width: 250px;
   }
 
   .layoutMain {
