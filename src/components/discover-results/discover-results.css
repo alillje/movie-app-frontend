@@ -118,3 +118,33 @@
     margin: 0px;
     padding: 0px;
 }
+
+.discoverLoadingSpinnerWrapper {
+    width:100%;
+    margin-top: 400px;
+    display: flex;
+    justify-content: center;
+    }
+
+.discoverLoadingSpinner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .discoverLoadingSpinner:before , .discoverLoadingSpinner:after{
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+  }
+  .discoverLoadingSpinner:after {
+    box-shadow: 0 2px 0 #b5b5b5 inset;
+    animation: rotate 2s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% {  transform: rotate(0)}
+    100% { transform: rotate(360deg)}
+  }

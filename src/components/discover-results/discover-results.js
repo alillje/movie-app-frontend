@@ -77,7 +77,6 @@ const DiscoverResults = ({ title }) => {
    * @returns {*}
    */
   useEffect(() => {
-    console.log(isLoading)
     getAllCategories()
   }, [results])
 
@@ -93,15 +92,15 @@ const DiscoverResults = ({ title }) => {
 })}
 </div>
 </div>
-<div className="discoverResults">
+{isLoading ? <div className="discoverLoadingSpinnerWrapper"><div className="discoverLoadingSpinner"></div></div> : <div className="discoverResults">
 {results.length ? results.map((title) => {
   const imageUrl = `${process.env.REACT_APP_IMAGES_URL}/original${title.poster_path}`
   return (
             <MovieCard key={title.id} movieId={title.id} originalTitle={title.original_title} releaseDate={title.release_date} imageUrl={imageUrl} poster={true} />
   )
 }) : <div className="discoverNoCategoryMessage"><h1>Pick a category to start browsing</h1></div>}
-</div>
-{prevPage + 1 < totalPages && <div className="discoverLoadMoreButtonWrapper"><div className="discoverLoadMoreButton" onClick={loadMore}><div className="discoverLoadMoreText"><h3>Load More</h3></div></div></div>
+</div>}
+{prevPage + 1 < totalPages && !isLoading && <div className="discoverLoadMoreButtonWrapper"><div className="discoverLoadMoreButton" onClick={loadMore}><div className="discoverLoadMoreText"><h3>Load More</h3></div></div></div>
 }
         </div>
   )

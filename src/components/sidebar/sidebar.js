@@ -38,8 +38,6 @@ const Sidebar = () => {
    * @param {object} event - An event object.
    */
   const goTo = (event) => {
-    console.log(event.target)
-    // setButtonActive(event.target.id || undefined)
     clearSearchPhrase()
     navigate(event.target.dataset.value)
   }

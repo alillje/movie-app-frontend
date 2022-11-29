@@ -37,7 +37,6 @@ export const getCategories = async () => {
   try {
     const response = await fetch(url)
     const json = await response.json()
-    console.log(json)
     return json
   } catch (e) {
     return undefined
@@ -70,7 +69,6 @@ export const getSingleMovie = async (movieId) => {
   try {
     const response = await fetch(url)
     const json = await response.json()
-    console.log(json)
     if (response.ok) {
       return json
     }
