@@ -2,7 +2,6 @@
     position: relative;
     height: 400px;
     width: auto;
-    /* width: 100%; */
     margin: 10px;
     transition: all .2s ease-in-out; 
     display: flex;
@@ -27,7 +26,7 @@
 }
 
 
-.movieCardTitle {
+.movieCardTitleBackdrop {
     position: absolute;
     bottom: 0;
     height: 50px;
@@ -45,11 +44,30 @@
 
 }
 
-.movieCardTitle h3 {
+.movieCardTitleBackdrop h3 {
     vertical-align: middle;
     margin: 0;
     padding: 0;
 }
+
+.movieCardTitlePoster {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  background: #000000a9;;
+  width: 100%;  
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  white-space: pre-line;
+  justify-content: center;
+  align-items: middle;
+  text-align: center;
+  color: #ffffff;
+  transition: all 1s ease-in-out; 
+}
+
 
 .movieCardLoader {
     width: 40px;

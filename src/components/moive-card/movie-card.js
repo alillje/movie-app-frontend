@@ -1,6 +1,6 @@
 import './movie-card.css'
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 /**
@@ -11,16 +11,41 @@ import { Link } from 'react-router-dom'
  */
 const MovieCard = ({ imageUrl, originalTitle, releaseDate, poster, movieId }) => {
   const [loading, setLoading] = useState(true)
+  const [isHover, setIsHover] = useState(false)
+
+  /**
+   *
+   * @param {*} event
+   */
+  const handleMouseEnter = (event) => {
+    console.log('test')
+    setIsHover(true)
+  }
+
+  /**
+   *
+   * @param {*} events
+   */
+  const handleMouseLeave = (event) => {
+    setIsHover(false)
+  }
+
+  useEffect(() => {}, [isHover])
   return (
-    <div className="movieCardContainer" >
+    <div className="movieCardContainer" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Link to={`/movie/${movieId}`}>
       <div className="movieCardLoader" style={{ width: '40px', margin: poster ? ' 0px 108px 0px 107px' : '0px 320px 0px 320px', display: loading ? 'block' : 'none' }}></div>
 
     <img onLoad={() => setLoading(false)} style={{ width: poster ? '255px' : '680px', display: loading ? 'none' : 'block' }} src={imageUrl} />
-    <div className="movieCardTitle" style={{ display: !loading ? 'none' : 'block', width: poster ? '255px' : '680px' }}>
+    <div className="movieCardTitleBackdrop" style={{ display: loading || poster ? 'none' : 'block', width: poster ? '255px' : '680px' }}>
        <h3>{originalTitle}</h3>
       {releaseDate}
     </div>
+
+   {isHover && poster && !loading && <div className="movieCardTitlePoster" style={{ width: poster ? '255px' : '680px' }}>
+       <h3>{originalTitle}</h3>
+      {releaseDate}
+    </div>}
     </Link>
   </div>
   )

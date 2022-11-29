@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
  */
 const Sidebar = () => {
   const navigate = useNavigate()
-
+  // TODO: Set to isSearching = false when clicking a link
   return (
     <div className="sidebarContainer">
         <div className="sidebarHeader">Movies</div>

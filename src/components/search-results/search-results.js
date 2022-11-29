@@ -16,6 +16,7 @@ const SearchResults = () => {
   const [currentSearchPhrase, setCurrentSearchPhrase] = useState('')
   // const currentPage = useSelector((state) => state.search.currentPage)
   const [results, setResults] = useState([])
+  const [totalPages, setTotalPages] = useState(0)
 
   // window.addEventListener('scroll', (event) => infiniteScroll(event))
   const [isLoading, setIsLoading] = useState(false)
@@ -31,6 +32,7 @@ const SearchResults = () => {
     const newResults = data.results
     setResults(newResults)
     setPrevPage(data.page)
+    setTotalPages(data.total_pages)
   }
   /**
    *
@@ -91,7 +93,8 @@ const SearchResults = () => {
         }) : <h2 className="noSearchResultsContainer">No Results</h2>}
         {isLoading && <div className="serachLoadingDiv">LOADING....</div>}
         <div className="searchLoadMoreButtonWrapper">
-        <div className="searchLoadMoreButton" onClick={loadMore}><div className="searchLoadMoreText"><h3>Load More</h3></div></div>
+
+{prevPage + 1 < totalPages && <div className="searchLoadMoreButton" onClick={loadMore}><div className="searchLoadMoreText"><h3>Load More</h3></div></div>}
         </div>
         </div>
   )
