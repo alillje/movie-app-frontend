@@ -36,9 +36,29 @@
   cursor: pointer;
   padding: 20px 0px 20px 0px;
   font-size: 24px;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 0.5fr) 1fr ;
+  grid-template-rows: 100%;
+  grid-column-gap: 10px;
+  align-items: center;
+  place-items: middle;
   transition: all .2s ease-in-out; 
+
+}
+
+.sideBarButton img {
+  grid-column: 2 / 3;
+  align-self: middle;
+  text-align: middle;
+  margin: 0 auto;
+  pointer-events: none;
+  
+}
+
+.sideBarButton div {
+  grid-column: 3 / 5;
+  float: right;
+  pointer-events: none;
 
 }
 
