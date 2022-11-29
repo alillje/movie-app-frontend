@@ -1,7 +1,6 @@
 import './discover-results.css'
 import * as React from 'react'
 import { useState, useEffect } from 'react'
-// import { useSelector } from 'react-redux'
 import { getCategories, getSingleCategory } from '../../services/fetch-service.js'
 import MovieCard from '../moive-card/movie-card.js'
 

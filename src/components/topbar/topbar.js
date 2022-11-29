@@ -1,17 +1,32 @@
 import './topbar.css'
 import * as React from 'react'
 import SearchField from '../search-field/search-field.js'
+import MenuIcon from './img/MenuIcon.svg'
+import { useDispatch } from 'react-redux'
+import { toggleSideBar } from '../../redux/reducers/mobile-nav'
 
 /**
  * Topbar Component.
  *
- * @param {React.ReactElement} children - The React Element to insert into the component.
  * @returns {React.ReactElement} - Topbar Component.
  */
 const Topbar = () => {
+  const dispatch = useDispatch()
+
+  /**
+   *
+   */
+  const handleClick = () => {
+    dispatch(
+      toggleSideBar({
+        show: true
+      })
+    )
+  }
   return (
     <div className="topbarContainer">
-      <SearchField />
+      <img src={MenuIcon} onClick={handleClick}></img>
+      <SearchField className="topbarSearch" />
     </div>
   )
 }

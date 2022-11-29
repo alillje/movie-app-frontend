@@ -7,11 +7,13 @@
 
 import { configureStore } from '@reduxjs/toolkit'
 import searchReducer from './reducers/search'
+import mobileNavReducer from './reducers/mobile-nav'
 
 // Create a new store that stores all reducers
 const store = configureStore({
   reducer: {
-    search: searchReducer
+    search: searchReducer,
+    mobileNav: mobileNavReducer
   }
 })
 

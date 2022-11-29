@@ -3,5 +3,19 @@
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  place-items: center;
+}
+
+.topbarSearch {
+  align-self: center;
+  align-self: middle;
+
+}
+
+.topbarContainer img {
+  max-width: 50px;
+  align-self: flex-start;
+  margin-left: 85%;;
+  margin-top: 5%;
 }
