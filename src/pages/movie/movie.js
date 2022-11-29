@@ -15,24 +15,34 @@ const Movie = () => {
   const params = useParams()
   const [movieDetails, setMovieDetails] = useState({})
   const [error, setError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   /**
    *
    */
   const getMovie = async () => {
+    setIsLoading(true)
     const movieData = await getSingleMovie(params.id)
     if (movieData) {
       setMovieDetails(movieData)
     } else {
       setError(true)
     }
+    setIsLoading(false)
   }
 
   useEffect(() => {
     window.scrollTo(0, 0)
     getMovie()
-    console.log(error)
   }, [])
-  return !error ? <MovieDetails movieData={movieDetails} /> : <Error message="Could not find the specified movie" />
+  if (isLoading) {
+    return <div className="movieLoadingSpinnerWrapper"><div className="movieLoadingSpinner"></div></div>
+  } else if (error) {
+    return <Error message="Could not find the specified movie" />
+  } else {
+    return <MovieDetails movieData={movieDetails} />
+  }
+
+  // !error ? <MovieDetails movieData={movieDetails} /> : <Error message="Could not find the specified movie" />
 }
 export default Movie
