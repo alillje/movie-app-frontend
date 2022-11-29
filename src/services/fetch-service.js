@@ -9,7 +9,7 @@ export const getTitles = async (params) => {
     const json = await response.json()
     return json
   } catch (e) {
-    console.log(e)
+    return undefined
   }
 }
 
@@ -24,7 +24,7 @@ export const searchTitles = async (searchPhrase) => {
     const json = await response.json()
     return json
   } catch (e) {
-    console.log(e)
+    return undefined
   }
 }
 
@@ -40,7 +40,7 @@ export const getCategories = async () => {
     console.log(json)
     return json
   } catch (e) {
-    console.log(e)
+    return undefined
   }
 }
 
@@ -54,10 +54,9 @@ export const getSingleCategory = async (categoryId) => {
   try {
     const response = await fetch(url)
     const json = await response.json()
-    console.log(json)
     return json
   } catch (e) {
-    console.log(e)
+    return undefined
   }
 }
 
@@ -76,7 +75,7 @@ export const getSingleMovie = async (movieId) => {
       return json
     }
   } catch (e) {
-    console.log(e)
+    return undefined
   }
 }
 
@@ -95,6 +94,6 @@ export const getMovieTrailer = async (movieId) => {
       return videoId
     }
   } catch (e) {
-    console.log(e)
+    return undefined
   }
 }

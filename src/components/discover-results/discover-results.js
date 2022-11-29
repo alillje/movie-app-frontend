@@ -83,13 +83,15 @@ const DiscoverResults = ({ title }) => {
 
   return (
     <div className="discoverResultsContainer">
-      <h1>{title}</h1>
+      <h1 className="discoverPageTitle">{title}</h1>
+      <div className="discoverButtonsWrapper">
 <div className="discoverButtons">
 {categories.length && categories.map((category) => {
   return (
     <button key={category.id} id={category.id} value={category.id} onClick={(event) => getCategoryResults(event)} className="discoverCategoryButton">{category.name}</button>
   )
 })}
+</div>
 </div>
 <div className="discoverResults">
 {results.length ? results.map((title) => {

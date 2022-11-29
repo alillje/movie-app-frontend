@@ -1,13 +1,12 @@
 .layoutContainer {
     background-color: inherit;
-    width: 100%;
+    width: 97vw;
     height: 100%;
     display: grid;
     grid-template-columns: 250px auto;
     grid-template-rows: 150px repeat(5, 1fr) auto;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-  
   }
 
   .layoutTop {
@@ -22,5 +21,7 @@
   }
 
   .layoutMain {
-    grid-area: 2 / 2 / 8 / 2;;
+    grid-area: 2 / 2 / 8 / 3;;
+    height: auto;
+    overflow-x: hidden;  
   }

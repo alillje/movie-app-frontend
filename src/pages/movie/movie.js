@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import MovieDetails from '../../components/movie-details/movie-details.js'
 import { useParams } from 'react-router-dom'
 import { getSingleMovie } from '../../services/fetch-service.js'
+import Error from '../../pages/error/error.js'
 
 /**
  * MovieDetails Component.
@@ -32,6 +33,6 @@ const Movie = () => {
     getMovie()
     console.log(error)
   }, [])
-  return !error ? <MovieDetails movieData={movieDetails} /> : <h2>Error</h2>
+  return !error ? <MovieDetails movieData={movieDetails} /> : <Error message="Could not find the specified movie" />
 }
 export default Movie

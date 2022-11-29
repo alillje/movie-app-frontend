@@ -2,8 +2,8 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: min-content 1fr;
-    grid-template-rows: 200px min-content 200px 100px 100px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr min-content 1fr 1fr auto;
     grid-column-gap: 20px;
     grid-row-gap: 0px;
     padding-left: 40px;
@@ -13,18 +13,21 @@
 .movieDetailsImageWrapper {
     grid-area: 1 / 1 / 2 / 2;
     width: 400px;
+    margin-left: 100px;
 }
 
 .movieDetailsImageWrapper img {
     width: 100%;
-    margin-right: 50px;
 }
 
 .movieDetailsOverviewContainer {
     top: 0;
-    width: 100%;
+    width: 90%;
     grid-area: 1 / 3 / 2 / 4;
     align-self: center;
+    word-wrap: break-word;
+    overflow: auto;
+    
 
 }
 
@@ -43,6 +46,7 @@
 }
 
 .movieDetailsInfoContainer {
+    margin-top: 50px;;
     grid-area: 2 / 3 / 3 / 4;
 
 }
@@ -59,17 +63,16 @@
 }
 
 .movieDetailsTrailerContainer {
-    grid-area: 6 / 1 / 7 / 4;
+    grid-area: 4 / 1 / 7 / 4;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    margin-top: 20px;
 }
 
 .movieDetailsTrailerTitle {
     text-align: center;
-    margin-top: 70px;
-    grid-area: 5 / 1 / 7 / 4;
+    grid-area: 3 / 1 / 7 / 4;
+    margin-top: 60px;
 
 }

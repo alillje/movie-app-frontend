@@ -38,8 +38,6 @@ const MovieDetails = ({ movieData }) => {
       <h3>{movieData.tagline}</h3>
 
         {movieData.overview}
-
-        </div>
         <div className="movieDetailsInfoContainer">
           <ul>
         <li><b>Release Date: </b>{movieData.release_date}</li>
@@ -47,9 +45,10 @@ const MovieDetails = ({ movieData }) => {
         <li><b>Votes: </b>{movieData.vote_count}</li>
 </ul>
       </div>
+        </div>
       <h1 className="movieDetailsTrailerTitle">Trailer</h1>
       <div className="movieDetailsTrailerContainer">
-        {videoUrl && <iframe id="player" type="text/html" width="800" height="600"
+        {videoUrl && <iframe id="player" type="text/html" width="800" height="500"
   src={`http://www.youtube.com/embed/${videoUrl}?enablejsapi=1`}></iframe>}
       </div>
     </div>
