@@ -2,6 +2,7 @@ import './mobile-sidebar.css'
 import * as React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+import { setSearch } from '../../redux/reducers/search'
 import { toggleSideBar } from '../../redux/reducers/mobile-nav'
 import InactiveHomeIcon from './img/InactiveHomeIcon.svg'
 import InactiveDiscoverIcon from './img/InactiveDiscoverIcon.svg'
@@ -22,6 +23,18 @@ const MobileSidebar = () => {
   const location = useLocation()
 
   /**
+   * Clears the search phrase in redux.
+   */
+  const clearSearchPhrase = () => {
+    dispatch(
+      setSearch({
+        isSearching: false,
+        searchPhrase: null
+      })
+    )
+  }
+
+  /**
    * Hides the sidebar.
    */
   const closeSidebar = () => {
@@ -38,6 +51,7 @@ const MobileSidebar = () => {
    * @param {object} event - An event object.
    */
   const goTo = (event) => {
+    clearSearchPhrase()
     closeSidebar()
     navigate(event.target.dataset.value)
   }
