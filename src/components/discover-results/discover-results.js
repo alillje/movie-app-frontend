@@ -3,6 +3,7 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { getCategories, getSingleCategory } from '../../services/fetch-service.js'
 import MovieCard from '../moive-card/movie-card.js'
+import Error from '../../pages/error/error.js'
 
 /**
  * Search Results Component.
@@ -18,6 +19,7 @@ const DiscoverResults = ({ title }) => {
   const [totalPages, setTotalPages] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const [prevPage, setPrevPage] = useState(0)
+  const [error, setError] = useState(false)
 
   /**
    * Gets the category of the choosen category.
@@ -30,10 +32,14 @@ const DiscoverResults = ({ title }) => {
     setCurrentCategory(event.target.id)
     setPrevPage(0)
     const data = await getSingleCategory(`{${event.target.value}&page=${prevPage + 1}`)
-    const newResults = data.results
-    setResults(newResults)
-    setPrevPage(data.page)
-    setTotalPages(data.total_pages)
+    if (data) {
+      const newResults = data.results
+      setResults(newResults)
+      setPrevPage(data.page)
+      setTotalPages(data.total_pages)
+    } else {
+      setError(true)
+    }
     setIsLoading(false)
   }
 
@@ -72,7 +78,11 @@ const DiscoverResults = ({ title }) => {
    */
   const getAllCategories = async () => {
     const cats = await getCategories()
-    setCategories(cats.genres)
+    if (cats) {
+      setCategories(cats.genres)
+    } else {
+      setError(true)
+    }
   }
 
   /**
@@ -81,8 +91,10 @@ const DiscoverResults = ({ title }) => {
   useEffect(() => {
     getAllCategories()
   }, [results])
-
-  return (
+  if (error) {
+    return <Error message="Oops! Something went wrong.." />
+  } else {
+    return (
     <div className="discoverResultsContainer">
       <h1 className="discoverPageTitle">{title}</h1>
       <div className="discoverButtonsWrapper">
@@ -105,6 +117,7 @@ const DiscoverResults = ({ title }) => {
 {prevPage + 1 < totalPages && !isLoading && <div className="discoverLoadMoreButtonWrapper"><div className="discoverLoadMoreButton" onClick={loadMore}><div className="discoverLoadMoreText"><h3>Load More</h3></div></div></div>
 }
         </div>
-  )
+    )
+  }
 }
 export default DiscoverResults

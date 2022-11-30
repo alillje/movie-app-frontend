@@ -10,8 +10,17 @@
   margin-left: 30px;
 }
 
-.homeTrending {
+.homeBrowserContainer {
   grid-area: 1 / 1 / 2 / 2;
+}
+
+.homeFooter {
+  height: 10px;
+  padding-top: 180px;
+  padding-bottom: 50px;
+  text-align: center;
+  color: #838383;
+  
 }
 
 @media screen and (max-width: 900px) {

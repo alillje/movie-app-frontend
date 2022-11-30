@@ -24,6 +24,7 @@
   grid-area: 2 / 2 / 8 / 3;
   height: auto;
   overflow-x: hidden;
+
 }
 
 @media screen and (max-width: 900px) {

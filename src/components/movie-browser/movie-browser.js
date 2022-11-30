@@ -3,6 +3,7 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { getTitles } from '../../services/fetch-service.js'
 import MovieCard from '../moive-card/movie-card.js'
+import Error from '../../pages/error/error.js'
 
 /**
  * MovieBrowser Component.
@@ -17,21 +18,23 @@ const MovieBrowser = ({ category, endPoint, poster }) => {
   const [recievedMovies, settecievedMovies] = useState(false)
   const [trendingTitles, setTrendingTitles] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   /**
    * Gets the movies to display in the list.
    */
   const getMovies = async () => {
-    try {
-      setIsLoading(true)
-      const titles = await getTitles(endPoint)
+    setIsLoading(true)
+    const titles = await getTitles(endPoint)
+    if (titles) {
       setTrendingTitles(titles.results)
       settecievedMovies(true)
-      setIsLoading(false)
-    } catch (e) {
-      console.log(e)
+    } else {
+      setError(true)
     }
+    setIsLoading(false)
   }
+
   /**
    * React useEffect hook
    */
@@ -39,7 +42,10 @@ const MovieBrowser = ({ category, endPoint, poster }) => {
     getMovies()
   }, [recievedMovies, isLoading])
 
-  return (
+  if (error) {
+    return <Error message="Oops! Something went wrong.." />
+  } else {
+    return (
     <div className="movieBrowserContainer">
       <h1>{category}</h1>
     <div className="movieBrowserTitleContainer">
@@ -48,7 +54,7 @@ const MovieBrowser = ({ category, endPoint, poster }) => {
           return (<MovieCard key={title.id} movieId={title.id} originalTitle={title.original_title} releaseDate={title.release_date} imageUrl={imageUrl} poster={poster} />)
         })}
     </div>
-    </div>
-  )
+    </div>)
+  }
 }
 export default MovieBrowser

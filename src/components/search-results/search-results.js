@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { searchTitles } from '../../services/fetch-service.js'
 import MovieCard from '../moive-card/movie-card.js'
+import Error from '../../pages/error/error.js'
 
 /**
  * Search Results Component.
@@ -18,6 +19,7 @@ const SearchResults = () => {
   const [totalPages, setTotalPages] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const [prevPage, setPrevPage] = useState(0)
+  const [error, setError] = useState(false)
 
   /**
    * Gets the search results based on search phrase currently stored in redux,
@@ -27,10 +29,14 @@ const SearchResults = () => {
     setResults([])
     const searchQuery = `${searchPhrase}&page=${prevPage + 1}`
     const data = await searchTitles(searchQuery)
-    const newResults = data.results
-    setResults(newResults)
-    setPrevPage(data.page)
-    setTotalPages(data.total_pages)
+    if (data) {
+      const newResults = data.results
+      setResults(newResults)
+      setPrevPage(data.page)
+      setTotalPages(data.total_pages)
+    } else {
+      setError(true)
+    }
   }
 
   /**
@@ -59,7 +65,10 @@ const SearchResults = () => {
       getSearchResults()
     }
   }, [searchPhrase])
-  return (
+  if (error) {
+    return <Error message="Oops! Something went wrong.." />
+  } else {
+    return (
     <div className="searchResultsContainter">
         {results.length ? results.map((title) => {
           const imageUrl = `${process.env.REACT_APP_IMAGES_URL}/original${title.poster_path}`
@@ -73,6 +82,7 @@ const SearchResults = () => {
 {prevPage + 1 < totalPages && <div className="searchLoadMoreButton" onClick={loadMore}><div className="searchLoadMoreText"><h3>Load More</h3></div></div>}
         </div>
         </div>
-  )
+    )
+  }
 }
 export default SearchResults

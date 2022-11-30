@@ -34,12 +34,11 @@ const MovieDetails = ({ movieData }) => {
   return (
     <div className="movieDetailsContainer">
       <div className="movieDetailsImageWrapper">
-      <img className src={imageUrl}></img>
+      <img src={imageUrl}></img>
       </div>
       <div className="movieDetailsOverviewContainer">
       <h1>{movieData.original_title}</h1>
       <h3>{movieData.tagline}</h3>
-
         {movieData.overview}
         <div className="movieDetailsInfoContainer">
           <ul>
@@ -49,9 +48,8 @@ const MovieDetails = ({ movieData }) => {
 </ul>
       </div>
         </div>
-      <h1 className="movieDetailsTrailerTitle">Trailer</h1>
       <div className="movieDetailsTrailerContainer">
-        {videoUrl && <iframe id="player" type="text/html" width="800px" height="500"
+        {videoUrl && <iframe id="player" type="text/html" width="800px" height="500" display="block"
   src={`http://www.youtube.com/embed/${videoUrl}?enablejsapi=1`}></iframe>}
       </div>
     </div>

@@ -2,6 +2,7 @@ import './movie-card.css'
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import dayjs from 'dayjs'
 
 /**
  * MovieCard Component.
@@ -44,12 +45,12 @@ const MovieCard = ({ imageUrl, originalTitle, releaseDate, poster, movieId }) =>
 
     {!poster && <div className="movieCardTitleBackdrop" style={{ display: loading || poster ? 'none' : 'block', width: poster ? '255px' : '680px' }}>
        <h3>{originalTitle}</h3>
-      {releaseDate}
+      {dayjs(releaseDate).format('YYYY')}
     </div>}
 
    {isHover && poster && !loading && <div className="movieCardTitlePoster" style={{ width: poster ? '255px' : '680px' }}>
        <h3>{originalTitle}</h3>
-      {releaseDate}
+      {dayjs(releaseDate).format('YYYY')}
     </div>}
     </Link>
   </div>

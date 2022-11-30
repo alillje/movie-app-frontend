@@ -17,11 +17,12 @@ const Home = () => {
   })
   return (
     <div className="homeContainer">
-        <div className="homeTrending">
+        <div className="homeBrowserContainer">
           <MovieBrowser category="Trending" endPoint="3/movie/popular" poster={false} />
           <MovieBrowser category="Now Playing" endPoint="3/movie/now_playing" poster={true} />
           <MovieBrowser category="Top Rated" endPoint="3/movie/top_rated" poster={true} />
           </div>
+          <div className="homeFooter">This product uses the TMDb API but is not endorsed or certified by TMDb</div>
     </div>
   )
 }

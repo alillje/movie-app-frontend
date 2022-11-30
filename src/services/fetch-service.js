@@ -17,7 +17,9 @@ export const getTitles = async (params) => {
   try {
     const response = await fetch(url)
     const json = await response.json()
-    return json
+    if (response.ok) {
+      return json
+    }
   } catch (e) {
     return undefined
   }
@@ -34,7 +36,9 @@ export const searchTitles = async (searchPhrase) => {
   try {
     const response = await fetch(url)
     const json = await response.json()
-    return json
+    if (response.ok) {
+      return json
+    }
   } catch (e) {
     return undefined
   }
@@ -50,7 +54,9 @@ export const getCategories = async () => {
   try {
     const response = await fetch(url)
     const categories = await response.json()
-    return categories
+    if (response.ok) {
+      return categories
+    }
   } catch (e) {
     return undefined
   }
@@ -67,7 +73,9 @@ export const getSingleCategory = async (categoryId) => {
   try {
     const response = await fetch(url)
     const json = await response.json()
-    return json
+    if (response.ok) {
+      return json
+    }
   } catch (e) {
     return undefined
   }
