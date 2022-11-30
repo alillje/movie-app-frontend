@@ -48,7 +48,7 @@ const MovieDetails = ({ movieData }) => {
         </div>
       <h1 className="movieDetailsTrailerTitle">Trailer</h1>
       <div className="movieDetailsTrailerContainer">
-        {videoUrl && <iframe id="player" type="text/html" width="800" height="500"
+        {videoUrl && <iframe id="player" type="text/html" width="800px" height="500"
   src={`http://www.youtube.com/embed/${videoUrl}?enablejsapi=1`}></iframe>}
       </div>
     </div>
