@@ -70,8 +70,8 @@ const DiscoverResults = ({ title }) => {
   /**
    * Gets and sets all the categories/genres.
    */
-  const getAllCategories = () => {
-    const cats = getCategories()
+  const getAllCategories = async () => {
+    const cats = await getCategories()
     setCategories(cats.genres)
   }
 
