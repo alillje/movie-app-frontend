@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/movie-app-frontend/static/css/main.b4a8c458.css",
-    "main.js": "/movie-app-frontend/static/js/main.0e366389.js",
+    "main.js": "/movie-app-frontend/static/js/main.83b21b7f.js",
     "static/media/Inter-Regular.ttf": "/movie-app-frontend/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
     "static/media/InactiveDiscoverIcon.svg": "/movie-app-frontend/static/media/InactiveDiscoverIcon.a00acaf0c0e8cc620651b4e988241f68.svg",
     "static/media/ActiveDiscoverIcon.svg": "/movie-app-frontend/static/media/ActiveDiscoverIcon.f079d990aa3a8a24e31952767a578e73.svg",
@@ -11,10 +11,10 @@
     "static/media/CloseButton.svg": "/movie-app-frontend/static/media/CloseButton.d29dc0d5fec0aab76173312ed24854ff.svg",
     "static/media/MenuIcon.svg": "/movie-app-frontend/static/media/MenuIcon.186a3bd98db85f471cdc17baafa7bf0a.svg",
     "main.b4a8c458.css.map": "/movie-app-frontend/static/css/main.b4a8c458.css.map",
-    "main.0e366389.js.map": "/movie-app-frontend/static/js/main.0e366389.js.map"
+    "main.83b21b7f.js.map": "/movie-app-frontend/static/js/main.83b21b7f.js.map"
   },
   "entrypoints": [
     "static/css/main.b4a8c458.css",
-    "static/js/main.0e366389.js"
+    "static/js/main.83b21b7f.js"
   ]
 }
