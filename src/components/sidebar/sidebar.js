@@ -11,7 +11,6 @@ import ActiveDiscoverIcon from './img/ActiveDiscoverIcon.svg'
 /**
  * Sidebar Component.
  *
- * @param {React.ReactElement} children - The React Element to insert into the component.
  * @returns {React.ReactElement} - Sidebar Component.
  */
 const Sidebar = () => {
@@ -20,8 +19,7 @@ const Sidebar = () => {
   const dispatch = useDispatch()
 
   /**
-   *
-   *
+   * Clears the search phrase in redux.
    */
   const clearSearchPhrase = () => {
     dispatch(

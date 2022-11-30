@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 
 /**
  * Discover Component.
+ * Represents the /discover page.
  *
  * @returns {React.ReactElement} - Discover Component.
  */

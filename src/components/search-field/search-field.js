@@ -6,6 +6,7 @@ import { setSearch, setCurrentPage } from '../../redux/reducers/search'
 
 /**
  * SearchField Component.
+ * Takes search input and uses redux to set search phrase.
  *
  * @returns {React.ReactElement} - SearchField Component.
  */
@@ -14,7 +15,7 @@ const SearchField = () => {
   const dispatch = useDispatch()
 
   /**
-   *
+   * Sets the search phrase by dispatching to redux.
    */
   const setSearchPhrase = () => {
     dispatch(
@@ -31,8 +32,7 @@ const SearchField = () => {
   }
 
   /**
-   *
-   *
+   * Clears the search phrase by dispatching to redux.
    */
   const clearSearchPhrase = () => {
     dispatch(
@@ -49,9 +49,7 @@ const SearchField = () => {
   }
 
   /**
-   *
-   *
-   * @returns {*}
+   * React useEffect hook.
    */
   useEffect(() => {
     currentSearch.length ? setSearchPhrase() : clearSearchPhrase({})

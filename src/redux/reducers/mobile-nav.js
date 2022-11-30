@@ -1,6 +1,6 @@
 /**
- * Redux customer module.
- * Create a customer slice with different actions
+ * Redux mobilenav module.
+ * Create a mobilenav slice with different actions
  *
  * @author Andreas Lillje <a.lillje@gmail.com>
  */

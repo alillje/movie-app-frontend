@@ -11,6 +11,7 @@ import CloseButton from './img/CloseButton.svg'
 
 /**
  * MobileSidebar Component.
+ * Represents the mobile sidebar/navmenu.
  *
  * @returns {React.ReactElement} - MobileSidebar Component.
  */
@@ -21,7 +22,7 @@ const MobileSidebar = () => {
   const location = useLocation()
 
   /**
-   *
+   * Hides the sidebar.
    */
   const closeSidebar = () => {
     dispatch(

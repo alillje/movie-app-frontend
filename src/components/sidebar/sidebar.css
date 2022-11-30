@@ -37,12 +37,12 @@
   padding: 20px 0px 20px 0px;
   font-size: 24px;
   display: grid;
-  grid-template-columns: 1fr repeat(3, 0.5fr) 1fr ;
+  grid-template-columns: 1fr repeat(3, 0.5fr) 1fr;
   grid-template-rows: 100%;
   grid-column-gap: 10px;
   align-items: center;
   place-items: middle;
-  transition: all .4s ease-in-out; 
+  transition: all 0.4s ease-in-out;
 }
 
 .sideBarButton img {
@@ -51,14 +51,12 @@
   text-align: middle;
   margin: 0 auto;
   pointer-events: none;
-  
 }
 
 .sideBarButton div {
   grid-column: 3 / 5;
   float: right;
   pointer-events: none;
-
 }
 
 .sideBarButton:hover {

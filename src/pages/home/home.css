@@ -1,22 +1,21 @@
 .homeContainer {
-    background-color: inherit;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr repeat(2, 1fr) auto;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    margin-left: 30px;
+  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr repeat(2, 1fr) auto;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-left: 30px;
 }
 
 .homeTrending {
-    grid-area: 1 / 1 / 2 / 2;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 @media screen and (max-width: 900px) {
-    .homeContainer {
-        margin-left: 0px;
-    }
-    
-}  
+  .homeContainer {
+    margin-left: 0px;
+  }
+}

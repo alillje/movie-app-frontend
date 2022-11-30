@@ -7,6 +7,7 @@ import MovieCard from '../moive-card/movie-card.js'
 
 /**
  * Search Results Component.
+ * Displays search results.
  *
  * @returns {React.ReactElement} - Search Results Component.
  */
@@ -17,8 +18,9 @@ const SearchResults = () => {
   const [totalPages, setTotalPages] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const [prevPage, setPrevPage] = useState(0)
+
   /**
-   *
+   * Gets the search results based on search phrase currently stored in redux,
    */
   const getSearchResults = async () => {
     setPrevPage(0)
@@ -30,8 +32,9 @@ const SearchResults = () => {
     setPrevPage(data.page)
     setTotalPages(data.total_pages)
   }
+
   /**
-   *
+   * Loads more (the next page) of the results.
    */
   const loadMore = async () => {
     setIsLoading(true)
@@ -48,9 +51,7 @@ const SearchResults = () => {
   }
 
   /**
-   *
-   *
-   * @returns {*}
+   * React useEffect hook.
    */
   useEffect(() => {
     if (searchPhrase !== currentSearchPhrase) {

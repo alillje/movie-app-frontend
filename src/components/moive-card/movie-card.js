@@ -4,32 +4,37 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 /**
- * MovieBrowser Component.
+ * MovieCard Component.
  *
- * @param {React.ReactElement} children - The React Element to insert into the component.
- * @returns {React.ReactElement} - MovieBrowser Component.
+ * @param {object} props - *
+ * @param {string} props.imageUrl - *
+ * @param {string} props.originalTitle - *
+ * @param {string} props.releaseDate - *
+ * @param {string} props.poster - *
+ * @param {string} props.movieId - *
+ * @returns {React.ReactElement} - MovieCard Component.
  */
 const MovieCard = ({ imageUrl, originalTitle, releaseDate, poster, movieId }) => {
   const [loading, setLoading] = useState(true)
   const [isHover, setIsHover] = useState(false)
 
   /**
-   *
-   * @param {*} event
+   * Sets the hovering state to true on mouse enter.
    */
-  const handleMouseEnter = (event) => {
+  const handleMouseEnter = () => {
     setIsHover(true)
   }
 
   /**
-   *
-   * @param {*} events
-   * @param event
+   * Sets the hovering state to false on mouse enter.
    */
-  const handleMouseLeave = (event) => {
+  const handleMouseLeave = () => {
     setIsHover(false)
   }
 
+  /**
+   * React useEffect Hook
+   */
   useEffect(() => {}, [isHover])
   return (
     <div className="movieCardContainer" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

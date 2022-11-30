@@ -3,6 +3,7 @@ import * as React from 'react'
 
 /**
  * LoadMoreButton Component.
+ * Represents a button to load more content.
  *
  * @returns {React.ReactElement} - LoadMoreButton Component.
  */

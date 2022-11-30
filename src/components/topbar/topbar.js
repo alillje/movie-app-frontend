@@ -14,7 +14,7 @@ const Topbar = () => {
   const dispatch = useDispatch()
 
   /**
-   *
+   * Handles the click of the menu icon by showing the mobile sidebar.
    */
   const handleClick = () => {
     dispatch(

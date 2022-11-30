@@ -1,35 +1,29 @@
-/* .loadMoreButtonContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-} */
-
 .loadMoreButtonContainer {
-    width: 200px;
-    height: 60px;
-    background-color: inherit;
-    border: 1px solid #565656;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: middle;
-    cursor: pointer;
-    border-radius: 10px;
-    color:#FFFFFF;
-    font-weight: 600;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    transition: all .4s ease-in-out; 
-    align-self: center;;
+  width: 200px;
+  height: 60px;
+  background-color: inherit;
+  border: 1px solid #565656;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: middle;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: all 0.4s ease-in-out;
+  align-self: center;
 }
 
 .loadMoreButtonContainer:hover {
-    background-color: #727171b7;
+  background-color: #727171b7;
 }
 
 .loadMoreButtonText h2 {
-    align-self: center;
-    margin: 0px;
-    padding: 0px;
+  align-self: center;
+  margin: 0px;
+  padding: 0px;
 }

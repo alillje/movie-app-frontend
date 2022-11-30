@@ -1,6 +1,6 @@
 /**
- * Redux customer module.
- * Create a customer slice with different actions
+ * Redux search module.
+ * Create a search slice with different actions
  *
  * @author Andreas Lillje <a.lillje@gmail.com>
  */

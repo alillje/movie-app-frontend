@@ -4,12 +4,11 @@ import { getMovieTrailer } from '../../services/fetch-service'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-// import { getTitles } from '../../services/fetch-service.js'
-
 /**
  * MovieBrowser Component.
  *
- * @param {React.ReactElement} children - The React Element to insert into the component.
+ * @param {object} props - *
+ * @param {object} props.movieData - *
  * @returns {React.ReactElement} - MovieBrowser Component.
  */
 const MovieDetails = ({ movieData }) => {
@@ -18,13 +17,17 @@ const MovieDetails = ({ movieData }) => {
   const [videoUrl, setVideoUrl] = useState('')
 
   /**
-   *
+   * Gets the videoUrl for the trailer.
    */
   const getVideoUrl = async () => {
     const videoPath = await getMovieTrailer(params.id)
     setVideoUrl(videoPath)
   }
 
+  /**
+   * React useEffect Hook
+   *
+   */
   useEffect(() => {
     getVideoUrl()
   }, [])

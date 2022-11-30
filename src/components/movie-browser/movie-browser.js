@@ -7,7 +7,10 @@ import MovieCard from '../moive-card/movie-card.js'
 /**
  * MovieBrowser Component.
  *
- * @param {React.ReactElement} children - The React Element to insert into the component.
+ * @param {object} props - *
+ * @param {string} props.category - *
+ * @param {string} props.endPoint - *
+ * @param {string} props.poster - *
  * @returns {React.ReactElement} - MovieBrowser Component.
  */
 const MovieBrowser = ({ category, endPoint, poster }) => {
@@ -16,7 +19,7 @@ const MovieBrowser = ({ category, endPoint, poster }) => {
   const [isLoading, setIsLoading] = useState(false)
 
   /**
-   *
+   * Gets the movies to display in the list.
    */
   const getMovies = async () => {
     try {
@@ -30,9 +33,7 @@ const MovieBrowser = ({ category, endPoint, poster }) => {
     }
   }
   /**
-   *
-   *
-   * @returns {*}
+   * React useEffect hook
    */
   useEffect(() => {
     getMovies()

@@ -7,9 +7,10 @@ import { getSingleMovie } from '../../services/fetch-service.js'
 import Error from '../../pages/error/error.js'
 
 /**
- * MovieDetails Component.
+ * Movie Component.
+ * Represents the /movie/:id page.
  *
- * @returns {React.ReactElement} - MovieDetails Component.
+ * @returns {React.ReactElement} - Movie Component.
  */
 const Movie = () => {
   const params = useParams()
@@ -18,7 +19,7 @@ const Movie = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   /**
-   *
+   * Gets the movie based on params.
    */
   const getMovie = async () => {
     setIsLoading(true)
@@ -31,6 +32,9 @@ const Movie = () => {
     setIsLoading(false)
   }
 
+  /**
+   * React useEffect Hook
+   */
   useEffect(() => {
     window.scrollTo(0, 0)
     getMovie()
@@ -42,7 +46,5 @@ const Movie = () => {
   } else {
     return <MovieDetails movieData={movieDetails} />
   }
-
-  // !error ? <MovieDetails movieData={movieDetails} /> : <Error message="Could not find the specified movie" />
 }
 export default Movie

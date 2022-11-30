@@ -2,10 +2,12 @@ import './error.css'
 import * as React from 'react'
 
 /**
- * Main Component.
+ * Error Component.
+ * Represents an error page.
  *
- * @param {React.ReactElement} children - The React Element to insert into the component.
- * @returns {React.ReactElement} - Main Component.
+ * @param {object} props - *
+ * @param {object} props.message - *
+ * @returns {React.ReactElement} - Error Component.
  */
 const Home = ({ message }) => {
   return (

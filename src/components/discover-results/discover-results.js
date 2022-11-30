@@ -7,8 +7,8 @@ import MovieCard from '../moive-card/movie-card.js'
 /**
  * Search Results Component.
  *
- * @param root0
- * @param root0.title
+ * @param {object} props - *
+ * @param {string} props.title - The title of the page.
  * @returns {React.ReactElement} - Search Results Component.
  */
 const DiscoverResults = ({ title }) => {
@@ -18,9 +18,11 @@ const DiscoverResults = ({ title }) => {
   const [totalPages, setTotalPages] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const [prevPage, setPrevPage] = useState(0)
+
   /**
+   * Gets the category of the choosen category.
    *
-   * @param event
+   * @param {object} event - An event object.
    */
   const getCategoryResults = async (event) => {
     setIsLoading(true)
@@ -34,8 +36,9 @@ const DiscoverResults = ({ title }) => {
     setTotalPages(data.total_pages)
     setIsLoading(false)
   }
+
   /**
-   *
+   * Loads more (the next page) of the results.
    */
   const loadMore = async () => {
     const data = await getSingleCategory(`{${currentCategory}&page=${prevPage + 1}`)
@@ -49,8 +52,9 @@ const DiscoverResults = ({ title }) => {
   }
 
   /**
+   * Sets the choosen category button to active.
    *
-   * @param {*} buttonId
+   * @param {string} buttonId - HTML Id identifier.
    */
   const setButtonActive = (buttonId) => {
     const allButtons = document.querySelectorAll('.discoverCategoryButton')
@@ -62,18 +66,17 @@ const DiscoverResults = ({ title }) => {
     activeButton.style.backgroundColor = '#ffffff'
     activeButton.style.color = '#000000'
   }
+
   /**
-   *
+   * Gets and sets all the categories/genres.
    */
-  const getAllCategories = async () => {
-    const cats = await getCategories()
+  const getAllCategories = () => {
+    const cats = getCategories()
     setCategories(cats.genres)
   }
 
   /**
-   *
-   *
-   * @returns {*}
+   * React useEffect Hook.
    */
   useEffect(() => {
     getAllCategories()
