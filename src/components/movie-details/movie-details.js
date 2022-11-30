@@ -50,7 +50,7 @@ const MovieDetails = ({ movieData }) => {
         </div>
       <div className="movieDetailsTrailerContainer">
         {videoUrl && <iframe id="player" type="text/html" width="800px" height="500" display="block"
-  src={`http://www.youtube.com/embed/${videoUrl}?enablejsapi=1`}></iframe>}
+  src={`https://www.youtube.com/embed/${videoUrl}?enablejsapi=1`}></iframe>}
       </div>
     </div>
   )
