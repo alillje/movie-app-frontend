@@ -7,6 +7,7 @@ import InactiveHomeIcon from './img/InactiveHomeIcon.svg'
 import InactiveDiscoverIcon from './img/InactiveDiscoverIcon.svg'
 import ActiveHomeIcon from './img/ActiveHomeIcon.svg'
 import ActiveDiscoverIcon from './img/ActiveDiscoverIcon.svg'
+import CloseButton from './img/CloseButton.svg'
 
 /**
  * MobileSidebar Component.
@@ -48,7 +49,7 @@ const MobileSidebar = () => {
         <div data-value="/discover" id="/discover" className="mobileSideBarButton" style={{ color: location.pathname === '/discover' ? '#ffffff' : '#838383' }} onClick={(event) => goTo(event)}><img src={location.pathname === '/discover' ? ActiveDiscoverIcon : InactiveDiscoverIcon}></img><div>Discover</div></div>
         </div>
         </div>
-        <div className="mobileSideBarTint">X</div>
+        <div className="mobileSideCloseButtonWrapper" onClick={closeSidebar}><img src={CloseButton}></img></div>
     </div>
   )
 }

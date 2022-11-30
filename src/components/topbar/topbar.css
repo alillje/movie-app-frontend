@@ -14,8 +14,16 @@
 }
 
 .topbarContainer img {
-  max-width: 50px;
-  align-self: flex-start;
-  margin-left: 85%;;
-  margin-top: 5%;
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .topbarContainer img {
+    display: block;
+    max-width: 50px;
+    align-self: flex-start;
+    margin-left: 85%;;
+    margin-top: 5%;
+  }
+
 }

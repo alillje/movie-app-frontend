@@ -5,7 +5,7 @@
   height: 100%;
   display: grid;
   box-shadow: 1px 0px 0px #686868;
-  grid-template-columns: 85% 15%;
+  grid-template-columns: 80% 20%;
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -22,14 +22,6 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
-
-/* .mobileSideBarTint {
-  height: 100%;
-  width: 100%;
-  grid-area: 1 / 2 / 8 / 2;
-  background: hsla(0, 0%, 49%, 0.116);
-  display: none;
-} */
 
 .mobileSidebarHeader {
   font-family: "Inter";
@@ -84,4 +76,25 @@
 
 .mobileSideBarButton:hover {
   background-color: #4d4d4d29;
+}
+
+.mobileSideCloseButtonWrapper {
+  width: 100%;
+  grid-column: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding-top: 30%;
+}
+
+.mobileSideCloseButtonWrapper img {
+  align-self: middle;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 480px) {
+  .mobileSideCloseButtonWrapper img {
+    max-width: 80%;
+  }
+
 }

@@ -1,198 +1,251 @@
 .discoverResultsContainer {
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 40px;
-
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 40px;
 }
 
 .discoverButtonsWrapper {
-    display: inline-flex;
-    justify-content: center;
-    margin: 10px 0px 10px 0px;
-    width: min-content;
-    height: 50px;
-    overflow-x: auto;
-    width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  margin: 10px 0px 10px 0px;
+  width: min-content;
+  height: 50px;
+  overflow-x: auto;
+  width: 100%;
 }
 
 .discoverButtons {
-    display: inline-flex;
-    width: min-content;
-    width: calc(100%);
-    height: 50px;
-    overflow-x: auto;
-
+  display: inline-flex;
+  width: min-content;
+  width: calc(100%);
+  height: 50px;
+  overflow-x: auto;
 }
 
 .discoverCategoryButton {
-    background-color: inherit;
-    width: auto;
-    margin: 0px 10px 0px 10px;
-    padding: 2px 10px;
-    align-self: center;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    text-align: center;
-    white-space: nowrap;
-    border-radius: 100px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px 10px 20px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all .4s ease-in-out; 
-    border: 1px solid #565656;
-
+  background-color: inherit;
+  width: auto;
+  margin: 0px 10px 0px 10px;
+  padding: 2px 10px;
+  align-self: center;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 100px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  border: 1px solid #565656;
 }
 
 .discoverCategoryButton:hover {
-    background-color: #89898929;
-
+  background-color: #89898929;
 }
 
-
 .discoverPageTitle {
-    align-self: flex-start;
-    color: #ffffff;
-  }
+  align-self: flex-start;
+  color: #ffffff;
+}
 
-  .discoverResults {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: auto;
-    justify-content: center;
-
-  }
-
+.discoverResults {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: center;
+}
 
 .discoverNoCategoryMessage {
-    width: calc(100vw - 250px);
-    text-align: center;
-    margin-top: 150px;
-    place-items: center;
-    align-self: center;
+  width: calc(100vw - 250px);
+  text-align: center;
+  margin-top: 150px;
+  place-items: center;
+  align-self: center;
 }
 
 .discoverNoCategoryMessage h1 {
-    margin: 0;
-    padding: 0;
-    color: #b5b5b585;
-
+  margin: 0;
+  padding: 0;
+  color: #b5b5b585;
 }
 
 .discoverLoadMoreButtonWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .discoverLoadMoreButton {
-    width: 200px;
-    height: 60px;
-    background-color: inherit;
-    border: 1px solid #565656;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: middle;
-    cursor: pointer;
-    border-radius: 10px;
-    color:#FFFFFF;
-    font-weight: 600;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    transition: all .4s ease-in-out; 
-    align-self: middle;
-
+  width: 200px;
+  height: 60px;
+  background-color: inherit;
+  border: 1px solid #565656;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: middle;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: all 0.4s ease-in-out;
+  align-self: middle;
 }
 
 .discoverLoadMoreButton:hover {
-    background-color: #89898929;
+  background-color: #89898929;
 }
 
 .discoverLoadMoreText h2 {
-    align-self: center;
-    margin: 0px;
-    padding: 0px;
+  align-self: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 .discoverLoadingSpinnerWrapper {
-    width:100%;
-    margin-top: 400px;
-    display: flex;
-    justify-content: center;
-    }
+  width: 100%;
+  margin-top: 400px;
+  display: flex;
+  justify-content: center;
+}
 
 .discoverLoadingSpinner {
-    position: relative;
-    width: 100px;
-    height: 100px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.discoverLoadingSpinner:before,
+.discoverLoadingSpinner:after {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+.discoverLoadingSpinner:after {
+  box-shadow: 0 2px 0 #b5b5b5 inset;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
   }
-  
-  .discoverLoadingSpinner:before , .discoverLoadingSpinner:after{
-    content: '';
-    border-radius: 50%;
-    position: absolute;
-    inset: 0;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+  100% {
+    transform: rotate(360deg);
   }
-  .discoverLoadingSpinner:after {
-    box-shadow: 0 2px 0 #b5b5b5 inset;
-    animation: rotate 2s linear infinite;
+}
+
+@media screen and (max-width: 900px) {
+  .discoverResultsContainer {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
   }
-  
-  @keyframes rotate {
-    0% {  transform: rotate(0)}
-    100% { transform: rotate(360deg)}
+
+  .discoverResults {
+    justify-content: center;
+    margin-top: 200px;
   }
 
-  @media screen and (max-width: 900px) {
-    .discoverResultsContainer {
-        height: 50px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-left: 20px;
-        margin-right: 20px;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-    }
-
-    .discoverResults {
-        justify-content: center;
-    }
-
-    .discoverButtonsWrapper {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: min-content;
-        overflow: visible;
-        margin-bottom: 270px;
-
-    }
-
-    .discoverButtons {
-        display: flex;
-        flex-wrap: wrap;
-        width: min-content;
-        gap: 10px;
-        width: 100vw;
-        overflow: visible;
-
-    }
-
-    .discoverCategoryButton {
-        padding: 20px;
-    }
-
-
-    .discoverNoCategoryMessage {
-        margin-top: 80px;
-    }
+  .discoverButtonsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 1fr;
+    overflow: visible;
   }
+
+  .discoverButtons {
+    display: flex;
+    flex-wrap: wrap;
+    width: min-content;
+    gap: 10px;
+    width: 100vw;
+    overflow: visible;
+  }
+
+  .discoverCategoryButton {
+    padding: 20px;
+  }
+
+  .discoverNoCategoryMessage {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .discoverResults {
+    margin-top: 290px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .discoverResults {
+    margin-top: 350px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .discoverResults {
+    margin-top: 430px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .discoverResults {
+    margin-top: 470px;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .discoverResults {
+    margin-top: 550px;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .discoverResults {
+    margin-top: 600px;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  .discoverResults {
+    margin-top: 680px;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .discoverResults {
+    margin-top: 780px;
+  }
+}
+
+@media screen and (max-width: 245px) {
+  .discoverResults {
+    margin-top: 820px;
+  }
+}
+
+@media screen and (max-width: 230px) {
+  .discoverResults {
+    margin-top: 1300px;
+  }
+}
