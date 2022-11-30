@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/movie-app-frontend/static/css/main.dcc0c902.css",
+    "main.js": "/movie-app-frontend/static/js/main.b89b90b7.js",
+    "static/media/Inter-Regular.ttf": "/movie-app-frontend/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
+    "static/media/InactiveDiscoverIcon.svg": "/movie-app-frontend/static/media/InactiveDiscoverIcon.a00acaf0c0e8cc620651b4e988241f68.svg",
+    "static/media/ActiveDiscoverIcon.svg": "/movie-app-frontend/static/media/ActiveDiscoverIcon.f079d990aa3a8a24e31952767a578e73.svg",
+    "static/media/InactiveHomeIcon.svg": "/movie-app-frontend/static/media/InactiveHomeIcon.d32b20da430375df29fa1f0209152588.svg",
+    "static/media/ActiveHomeIcon.svg": "/movie-app-frontend/static/media/ActiveHomeIcon.9aaaa22e7011afe96bfa2fdb167ba6fd.svg",
+    "index.html": "/movie-app-frontend/index.html",
+    "static/media/CloseButton.svg": "/movie-app-frontend/static/media/CloseButton.d29dc0d5fec0aab76173312ed24854ff.svg",
+    "static/media/MenuIcon.svg": "/movie-app-frontend/static/media/MenuIcon.186a3bd98db85f471cdc17baafa7bf0a.svg",
+    "main.dcc0c902.css.map": "/movie-app-frontend/static/css/main.dcc0c902.css.map",
+    "main.b89b90b7.js.map": "/movie-app-frontend/static/js/main.b89b90b7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dcc0c902.css",
+    "static/js/main.b89b90b7.js"
+  ]
+}
